@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>545158</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="_gxPBjPoORUv" data-outputId="5aa0fecf-ffd4-472d-ccc4-bb2265ba91ee">
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> drive</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>drive.mount(<span class="st">&#39;/content/drive&#39;</span>, force_remount<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>cd <span class="op">/</span>content<span class="op">/</span>drive<span class="op">/</span>My Drive<span class="op">/</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>cd <span class="op">/</span>content<span class="op">/</span>drive<span class="op">/</span>My Drive<span class="op">/</span><span class="st">&#39;Colab Notebooks&#39;</span><span class="op">/</span>SentimentAnalysis</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Mounted at /content/drive
+/content/drive/My Drive
+/content/drive/My Drive/Colab Notebooks/SentimentAnalysis
+</code></pre>
+</div>
+</div>
+<div class="cell code" id="CBY1eMn3MQoF">
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>jupyter nbconvert final_lab2.ipynb <span class="op">--</span>to html</span></code></pre></div>
+</div>
+<div class="cell code" id="F1ol5auOL0qh">
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ! pip install nbconvert</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>jupyter nbconvert final_lab2.ipynb <span class="op">--</span>to pdf</span></code></pre></div>
+</div>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="A6tWMxyJKHLG" data-outputId="ebcd2c9a-b126-4f8c-9228-bbfec85bf5f1">
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>jupyter nbconvert <span class="op">--</span>to html <span class="op">--</span>execute final_lab2.ipynb</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>[NbConvertApp] Converting notebook final_lab2.ipynb to html
+</code></pre>
+</div>
+</div>
+<div class="cell markdown" id="D49yMgieuE4o">
+<ul>
+<li>Ananya Das Manolyl [49020860]</li>
+</ul>
+<p>The Objectve of this notebook is to classify sentiment of IMDB dataset: <a href="https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews" class="uri">https://www.kaggle.com/datasets/lakshmi25npathi/imdb-dataset-of-50k-movie-reviews</a>. The dataset has 50K movie reviews from Internet Movie Database (IMDB) and sentiment for each review. There are total of 50000 records, the dataset has 25000 positive and negative reviews. Hence there is no bias in the dataset. This particular task is not a multi-task problem, this is because I am only predicting the sentiment which is one task. If along with the sentiment analysis I had trained to identify the popularity of the movie/actor. Then this would have been a multi-task problem. This data was collected by Stanford University to learn word vectors for Sentiment Analysis. The data was collected previous to 2011. The dataset has about 30 reviews for each movie. This current dataset is not multi-modal, as it only contains text data and no other forms of dataset.</p>
+<p>The Evaluation Criteria that I will be using is Accuracy, as the task is a binary classification, and the dataset is balanced, i.e., there is equal proportion of positive and negative reviews. Thus I will be using accuracy as my evaluation criteria to understand how well I have classified the dataset</p>
+<p>The foundational model that I will be using is Bert-base-uncased (Bidirectional Encoder Representations from Transformers). This model was developed by google to understand the context of the word with respect to sentence by considering both the left and right context. The model was trained for following purposes</p>
+<ol>
+<li>Masked Language Modeling (MLM): The objective is to predict missing or masked words in a sentence. To train this, certain percentage of words randomly selected and is replaced with [MASK] token. Then the model, is trained to predict the missing words.</li>
+<li>Next Sentence Prediction (NSP) The objective is to predict whether a pair of sentences follows each other. To train this, for each input sequence a pair of sentences is created and BERT learns relationships between sentences and understand the context and predicts whether the second sentence is the actual next sentence The task I will be performing is different from what it was trained for, i.e., the model was trained to predict the missing word or the next sentence. The task being performed in this notebook is for classification of the sentence to two classes positive and negative. Hence the domain it was trained for is different from the current objective. We will be leveraging the knowledge encoded in the pre-trained BERT model</li>
+</ol>
+</div>
+<div class="cell markdown" id="olV_JDV-uP8H">
+<p>References:</p>
+<ul>
+<li><a href="https://github.com/rohan-paul/MachineLearning-DeepLearning-Code-for-my-YouTube-Channel/blob/e4f77617d8b4cded085295c95d16f9d3dc33d69a/NLP/Fine_Tuning_HuggingFace_Transformer_BERT_Yelp_Customer_Review_Predictions/Fine_Tuning_Transformer_BERT_Customer_Review.ipynb" class="uri">https://github.com/rohan-paul/MachineLearning-DeepLearning-Code-for-my-YouTube-Channel/blob/e4f77617d8b4cded085295c95d16f9d3dc33d69a/NLP/Fine_Tuning_HuggingFace_Transformer_BERT_Yelp_Customer_Review_Predictions/Fine_Tuning_Transformer_BERT_Customer_Review.ipynb</a></li>
+<li><a href="https://github.com/qinhanmin2014/fine-tune-bert-for-text-classification/blob/main/tf_bert_5_3_1_colab_tpu.ipynb" class="uri">https://github.com/qinhanmin2014/fine-tune-bert-for-text-classification/blob/main/tf_bert_5_3_1_colab_tpu.ipynb</a></li>
+<li>definitely chatgpt to understand the pytroch framework and each function associated</li>
+<li><a href="https://arxiv.org/pdf/1905.05583v3.pdf" class="uri">https://arxiv.org/pdf/1905.05583v3.pdf</a></li>
+</ul>
+</div>
+<section id="load-libraries" class="cell markdown" id="MQ-8V14dxEL6">
+<h1>Load Libraries</h1>
+</section>
+<div class="cell code" id="v5sYC6ilxB18" data-scrolled="true">
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install git+https://github.com/huggingface/transformers</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install git+https://github.com/huggingface/accelerate</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install transformers[torch] accelerate -U</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip show transformers accelerate</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install pytorch</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install torchmetrics</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install tensorflow</span></span></code></pre></div>
+</div>
+<div class="cell code" id="NjHBCU_sCb83">
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> mannwhitneyu</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.utils.data <span class="im">import</span> DataLoader</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> DistilBertForSequenceClassification, DistilBertTokenizer,DistilBertForSequenceClassification</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.optim <span class="im">import</span> Adam, RMSprop,lr_scheduler,AdamW</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm <span class="im">import</span> tqdm</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> DataCollatorWithPadding,BertTokenizer</span></code></pre></div>
+</div>
+<div class="cell code" id="SXX5FxKct2o2">
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.feature_extraction.text <span class="im">import</span> CountVectorizer <span class="co"># to create bag of words/ document-term matrix</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize <span class="co"># tokenizing the words</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords <span class="co"># to remove stopwords</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string <span class="co"># for string operations</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk <span class="co"># for text processing</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torchmetrics.classification <span class="im">import</span> Accuracy</span></code></pre></div>
+</div>
+<div class="cell code" id="QMbrP1zVyWrt">
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tensorflow <span class="im">as</span> tf</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.models <span class="im">import</span> Sequential</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.layers <span class="im">import</span> Dense, Dropout</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.optimizers <span class="im">import</span> Adam</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.layers <span class="im">import</span> Embedding</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, confusion_matrix</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># from tensorflow.keras.utils import to_categorical</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> AutoTokenizer, AutoModel, AutoConfig</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torch.nn <span class="im">as</span> nn</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers.modeling_outputs <span class="im">import</span> TokenClassifierOutput</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> ttest_rel</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tqdm.auto <span class="im">import</span> tqdm</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span></code></pre></div>
+</div>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="qXYZPrtXuM-j" data-outputId="11fe702d-6239-416a-c15c-466273d551c9">
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">&#39;punkt&#39;</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">&#39;display.max_rows&#39;</span>, <span class="va">None</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">&#39;display.max_columns&#39;</span>, <span class="va">None</span>)</span></code></pre></div>
+<div class="output stream stderr">
+<pre><code>[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt.zip.
+</code></pre>
+</div>
+</div>
+<section id="data-loading-and-processing" class="cell markdown" id="xa2XXw7jw4OM">
+<h1>Data Loading and Processing</h1>
+</section>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:365}" id="2fB9RO10R8iq" data-outputId="72a4d7e7-7f14-41c9-8f56-cddc2254dea9">
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>raw_df <span class="op">=</span> pd.read_csv(<span class="st">&quot;IMDBDataset.csv&quot;</span>)<span class="co"># loading the dataset</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>raw_df[<span class="st">&#39;sentiment&#39;</span>]<span class="op">=</span><span class="bu">list</span>(pd.get_dummies(raw_df[<span class="st">&#39;sentiment&#39;</span>],drop_first<span class="op">=</span><span class="va">True</span>)[<span class="st">&#39;positive&#39;</span>].astype(<span class="bu">int</span>)) <span class="co"># encoding the sentiment to numerical format</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>raw_df.head(<span class="dv">3</span>)</span></code></pre></div>
+<div class="output error" data-ename="FileNotFoundError" data-evalue="[Errno 2] No such file or directory: &#39;IMDBDataset.csv&#39;">
+<pre><code>---------------------------------------------------------------------------
+FileNotFoundError                         Traceback (most recent call last)
+&lt;ipython-input-6-eef3ca3e610c&gt; in &lt;cell line: 1&gt;()
+----&gt; 1 raw_df = pd.read_csv(&quot;IMDBDataset.csv&quot;)# loading the dataset
+      2 raw_df[&#39;sentiment&#39;]=list(pd.get_dummies(raw_df[&#39;sentiment&#39;],drop_first=True)[&#39;positive&#39;].astype(int)) # encoding the sentiment to numerical format
+      3 
+      4 raw_df.head(3)
+
+/usr/local/lib/python3.10/dist-packages/pandas/util/_decorators.py in wrapper(*args, **kwargs)
+    209                 else:
+    210                     kwargs[new_arg_name] = new_arg_value
+--&gt; 211             return func(*args, **kwargs)
+    212 
+    213         return cast(F, wrapper)
+
+/usr/local/lib/python3.10/dist-packages/pandas/util/_decorators.py in wrapper(*args, **kwargs)
+    329                     stacklevel=find_stack_level(),
+    330                 )
+--&gt; 331             return func(*args, **kwargs)
+    332 
+    333         # error: &quot;Callable[[VarArg(Any), KwArg(Any)], Any]&quot; has no
+
+/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py in read_csv(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)
+    948     kwds.update(kwds_defaults)
+    949 
+--&gt; 950     return _read(filepath_or_buffer, kwds)
+    951 
+    952 
+
+/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py in _read(filepath_or_buffer, kwds)
+    603 
+    604     # Create the parser.
+--&gt; 605     parser = TextFileReader(filepath_or_buffer, **kwds)
+    606 
+    607     if chunksize or iterator:
+
+/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py in __init__(self, f, engine, **kwds)
+   1440 
+   1441         self.handles: IOHandles | None = None
+-&gt; 1442         self._engine = self._make_engine(f, self.engine)
+   1443 
+   1444     def close(self) -&gt; None:
+
+/usr/local/lib/python3.10/dist-packages/pandas/io/parsers/readers.py in _make_engine(self, f, engine)
+   1733                 if &quot;b&quot; not in mode:
+   1734                     mode += &quot;b&quot;
+-&gt; 1735             self.handles = get_handle(
+   1736                 f,
+   1737                 mode,
+
+/usr/local/lib/python3.10/dist-packages/pandas/io/common.py in get_handle(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)
+    854         if ioargs.encoding and &quot;b&quot; not in ioargs.mode:
+    855             # Encoding
+--&gt; 856             handle = open(
+    857                 handle,
+    858                 ioargs.mode,
+
+FileNotFoundError: [Errno 2] No such file or directory: &#39;IMDBDataset.csv&#39;
+</code></pre>
+</div>
+</div>
+<div class="cell code" id="ma1uvIm-umfs">
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> remove_punctuation(word):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&#39;&#39;&#39;</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">    function used checking for punctuations on each word and removing it</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">    &#39;&#39;&#39;</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    word<span class="op">=</span>re.sub(<span class="st">&quot;br&quot;</span>,<span class="st">&quot;&quot;</span>,word) <span class="co"># removing the &quot;br&quot; present in the data</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">&#39;&#39;</span>.join(char <span class="cf">for</span> char <span class="kw">in</span> word <span class="cf">if</span> char.isalnum()) <span class="co"># removing all the punctuations</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> text_preprocessing(text):</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co">    function used processing the text by removing any punctuations</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> text.split(<span class="st">&#39; &#39;</span>) <span class="co"># splitting the sentence to texts</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    tokens <span class="op">=</span> [remove_punctuation(word) <span class="cf">for</span> word <span class="kw">in</span> tokens] <span class="co"># removing punctuations from the sentence</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> tokens</span></code></pre></div>
+</div>
+<div class="cell code" id="Zc1acHdBJ-5O">
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I have only removed the punctuations and &quot;br&quot; word</span></span></code></pre></div>
+</div>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="j-nVNjfXT37t" data-outputId="759bcf12-e39e-4cd3-a748-cb8d67f5243e">
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> raw_df.copy() <span class="co"># creating a data copy()</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># df = raw_df[0:1000]</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># preprocessing the data to remove punctuations and using it to help with sentiment analysis</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>df[<span class="st">&#39;mod_review&#39;</span>]<span class="op">=</span><span class="st">&#39;&#39;</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,row <span class="kw">in</span> <span class="bu">enumerate</span>(df[<span class="st">&#39;review&#39;</span>]):</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    mod_list<span class="op">=</span>text_preprocessing(row)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">&#39;mod_review&#39;</span>][i] <span class="op">=</span>mod_list</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">&#39;review&#39;</span>][i] <span class="op">=</span><span class="st">&quot; &quot;</span>.join(mod_list)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>df.head(<span class="dv">3</span>)</span></code></pre></div>
+<div class="output stream stderr">
+<pre><code>IOPub data rate exceeded.
+The Jupyter server will temporarily stop sending output
+to the client in order to avoid crashing it.
+To change this limit, set the config variable
+`--ServerApp.iopub_data_rate_limit`.
+
+Current values:
+ServerApp.iopub_data_rate_limit=1000000.0 (bytes/sec)
+ServerApp.rate_limit_window=3.0 (secs)
+
+</code></pre>
+</div>
+<div class="output execute_result" data-execution_count="8">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>review</th>
+      <th>sentiment</th>
+      <th>mod_review</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>One of the other reviewers has mentioned that ...</td>
+      <td>1</td>
+      <td>[One, of, the, other, reviewers, has, mentione...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>A wonderful little production   The filming te...</td>
+      <td>1</td>
+      <td>[A, wonderful, little, production, , , The, fi...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>I thought this was a wonderful way to spend ti...</td>
+      <td>1</td>
+      <td>[I, thought, this, was, a, wonderful, way, to,...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell code" id="XOOgzzAIJ-5O">
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># I split 30% of the dataset as test set and remaining 70% as training dataset.</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Since my data is balanced I didnt have to stratify but I chose to stratify so that equal number of records for each classes are chosen</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># while making the split.</span></span></code></pre></div>
+</div>
+<div class="cell code" id="1OGL1SPqTkL6">
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>X<span class="op">=</span>df.drop(<span class="st">&#39;sentiment&#39;</span>,axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>y<span class="op">=</span>df[<span class="st">&#39;sentiment&#39;</span>]</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># data splitting</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>X_train, X_val, y_train, y_val <span class="op">=</span> train_test_split(X, y, test_size <span class="op">=</span> <span class="fl">0.30</span>,stratify<span class="op">=</span>y, random_state <span class="op">=</span> <span class="dv">0</span>)</span></code></pre></div>
+</div>
+<div class="cell code" id="LyeZvGSzJ-5O">
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> raw_df</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> df</span></code></pre></div>
+</div>
+<div class="cell code" id="wFTdFBP08BWj">
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># setting the total number of epochs</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>num_epoch <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>batch_size<span class="op">=</span><span class="dv">32</span> <span class="co"># batch size for training</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>learning_rate<span class="op">=</span><span class="fl">2e-5</span> <span class="co"># learning rate is set to high</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>add_name<span class="op">=</span><span class="st">&quot;allv2&quot;</span> <span class="co"># naming convention for saving the model</span></span></code></pre></div>
+</div>
+<section id="model-from-scratch" class="cell markdown" id="5txAF0X6wlcV">
+<h1>Model from Scratch</h1>
+</section>
+<div class="cell code" id="s_CVYZRm7mqA" data-scrolled="true">
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>physical_devices <span class="op">=</span> tf.config.list_physical_devices(<span class="st">&#39;GPU&#39;</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> device <span class="kw">in</span> physical_devices:</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    tf.config.experimental.set_memory_growth(device, <span class="va">True</span>)</span></code></pre></div>
+</div>
+<div class="cell code" id="aATGcys5J-5P">
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For this model, I have used the previous lab work. The embeddings were trained using conceptnet.</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># I have reused my work, so this model is built based on tensorflow framework</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># This model has 3 dense layers and one layer of sigmoid.</span></span></code></pre></div>
+</div>
+<div class="cell code" id="b7wHhzajSUDX">
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> load_embeddings(filename):</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Load a DataFrame from the generalized text format used by word2vec, GloVe,</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co">    fastText, and ConceptNet Numberbatch. The main point where they differ is</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co">    whether there is an initial line with the dimensions of the matrix.</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    labels <span class="op">=</span> []</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    rows <span class="op">=</span> []</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(filename, encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>) <span class="im">as</span> infile:</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i, line <span class="kw">in</span> <span class="bu">enumerate</span>(infile):</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>            items <span class="op">=</span> line.rstrip().split(<span class="st">&#39; &#39;</span>)</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="bu">len</span>(items) <span class="op">==</span> <span class="dv">2</span>:</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>                <span class="co"># This is a header row giving the shape of the matrix</span></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>                <span class="cf">continue</span></span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>            labels.append(items[<span class="dv">0</span>])</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>            values <span class="op">=</span> np.array([<span class="bu">float</span>(x) <span class="cf">for</span> x <span class="kw">in</span> items[<span class="dv">1</span>:]], <span class="st">&#39;f&#39;</span>)</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>            rows.append(values)</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>    arr <span class="op">=</span> np.vstack(rows)</span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.DataFrame(arr, index<span class="op">=</span>labels, dtype<span class="op">=</span><span class="st">&#39;f&#39;</span>)</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_data_split(embeddings_nm,traindf,flg<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>  <span class="co">&#39;&#39;&#39;</span></span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a><span class="co">  Function to load the embeddings and preprocess datasets</span></span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a><span class="co">  &#39;&#39;&#39;</span></span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a>  <span class="kw">def</span> fetch_embeddings(df):</span>
+<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a>    <span class="co">&#39;&#39;&#39;</span></span>
+<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a><span class="co">    function to load embeddings</span></span>
+<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a><span class="co">    &#39;&#39;&#39;</span></span>
+<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a>    body<span class="op">=</span>[]</span>
+<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> df:</span>
+<span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a>      body.extend(row)</span>
+<span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a>    words_common <span class="op">=</span> <span class="bu">list</span>(<span class="bu">set</span>(body) <span class="op">&amp;</span> <span class="bu">set</span>(embeddings.index))</span>
+<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a>    vectors <span class="op">=</span> embeddings.loc[words_common]</span>
+<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> vectors</span>
+<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> flg:</span>
+<span id="cb25-37"><a href="#cb25-37" aria-hidden="true" tabindex="-1"></a>    embeddings <span class="op">=</span> load_embeddings(embeddings_nm)</span>
+<span id="cb25-38"><a href="#cb25-38" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>:</span>
+<span id="cb25-39"><a href="#cb25-39" aria-hidden="true" tabindex="-1"></a>    embeddings <span class="op">=</span> embeddings_nm</span>
+<span id="cb25-40"><a href="#cb25-40" aria-hidden="true" tabindex="-1"></a><span class="co"># for positive data processing the text and for negative data processing the text and saving to mod_review column</span></span>
+<span id="cb25-41"><a href="#cb25-41" aria-hidden="true" tabindex="-1"></a>  positive_traindf <span class="op">=</span> traindf.query(<span class="st">&#39;sentiment == 1&#39;</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb25-42"><a href="#cb25-42" aria-hidden="true" tabindex="-1"></a>  negative_traindf <span class="op">=</span> traindf.query(<span class="st">&#39;sentiment == 0&#39;</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb25-43"><a href="#cb25-43" aria-hidden="true" tabindex="-1"></a>  positive_traindf[<span class="st">&#39;mod_review&#39;</span>]<span class="op">=</span><span class="st">&#39;&#39;</span></span>
+<span id="cb25-44"><a href="#cb25-44" aria-hidden="true" tabindex="-1"></a>  negative_traindf[<span class="st">&#39;mod_review&#39;</span>]<span class="op">=</span><span class="st">&#39;&#39;</span></span>
+<span id="cb25-45"><a href="#cb25-45" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i,row <span class="kw">in</span> <span class="bu">enumerate</span>(positive_traindf[<span class="st">&#39;review&#39;</span>]):</span>
+<span id="cb25-46"><a href="#cb25-46" aria-hidden="true" tabindex="-1"></a>      positive_traindf[<span class="st">&#39;mod_review&#39;</span>][i] <span class="op">=</span>text_preprocessing(row)</span>
+<span id="cb25-47"><a href="#cb25-47" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i,row <span class="kw">in</span> <span class="bu">enumerate</span>(negative_traindf[<span class="st">&#39;review&#39;</span>]):</span>
+<span id="cb25-48"><a href="#cb25-48" aria-hidden="true" tabindex="-1"></a>      negative_traindf[<span class="st">&#39;mod_review&#39;</span>][i] <span class="op">=</span>text_preprocessing(row)</span>
+<span id="cb25-49"><a href="#cb25-49" aria-hidden="true" tabindex="-1"></a>    <span class="co"># now obtaining the embeddings for the processed text from concepnet and creating vectors</span></span>
+<span id="cb25-50"><a href="#cb25-50" aria-hidden="true" tabindex="-1"></a>  pos_vectors <span class="op">=</span> fetch_embeddings(positive_traindf[<span class="st">&#39;mod_review&#39;</span>])</span>
+<span id="cb25-51"><a href="#cb25-51" aria-hidden="true" tabindex="-1"></a>  neg_vectors <span class="op">=</span> fetch_embeddings(negative_traindf[<span class="st">&#39;mod_review&#39;</span>])</span>
+<span id="cb25-52"><a href="#cb25-52" aria-hidden="true" tabindex="-1"></a>    <span class="co"># concatenating the  vectores and creatinf the target/ labels accordingly</span></span>
+<span id="cb25-53"><a href="#cb25-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-54"><a href="#cb25-54" aria-hidden="true" tabindex="-1"></a>  vectors <span class="op">=</span> pd.concat([pos_vectors, neg_vectors])</span>
+<span id="cb25-55"><a href="#cb25-55" aria-hidden="true" tabindex="-1"></a>  targets <span class="op">=</span> np.array([<span class="dv">1</span> <span class="cf">for</span> entry <span class="kw">in</span> pos_vectors.index] <span class="op">+</span> [<span class="op">-</span><span class="dv">1</span> <span class="cf">for</span> entry <span class="kw">in</span> neg_vectors.index])</span>
+<span id="cb25-56"><a href="#cb25-56" aria-hidden="true" tabindex="-1"></a>  labels <span class="op">=</span><span class="bu">list</span>(pos_vectors.index) <span class="op">+</span> <span class="bu">list</span>(neg_vectors.index)</span>
+<span id="cb25-57"><a href="#cb25-57" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> vectors, targets,labels</span></code></pre></div>
+</div>
+<div class="cell code" id="bHl0gkMaSUGO" data-scrolled="true">
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>train_df<span class="op">=</span>X_train.copy()</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>train_df[<span class="st">&#39;sentiment&#39;</span>]<span class="op">=</span>y_train</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>train_vectors, train_targets,train_labels <span class="op">=</span>get_data_split(<span class="st">&#39;numberbatch-en-17.04b.txt&#39;</span>,train_df)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>val_df<span class="op">=</span>X_val.copy()</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>val_df[<span class="st">&#39;sentiment&#39;</span>]<span class="op">=</span>y_val</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>val_vectors, val_targets,val_labels <span class="op">=</span>get_data_split(<span class="st">&#39;numberbatch-en-17.04b.txt&#39;</span>,val_df)</span></code></pre></div>
+</div>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="I8V8pa-KwY7N" data-outputId="15bb6187-c013-4950-d033-efefb9c02d6e">
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>num_epoch<span class="op">=</span><span class="dv">20</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.optimizers <span class="im">import</span> Adam</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Build the neural network model with 3 dense layers and relu activation functions with a sigmoid function</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>man_model <span class="op">=</span> Sequential()</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>man_model.add(Dense(<span class="dv">768</span>, activation<span class="op">=</span><span class="st">&#39;relu&#39;</span>, input_shape<span class="op">=</span>(train_vectors.shape[<span class="dv">1</span>],)))</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>man_model.add(Dense(<span class="dv">768</span>,  activation<span class="op">=</span><span class="st">&#39;relu&#39;</span>))</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>man_model.add(Dense(<span class="dv">512</span>,  activation<span class="op">=</span><span class="st">&#39;relu&#39;</span>))</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>man_model.add(Dense(<span class="dv">1</span>, activation<span class="op">=</span><span class="st">&#39;softmax&#39;</span>))</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Compiling the model with adam optimizer and binary crossentropy as loss function</span></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>man_model.<span class="bu">compile</span>(optimizer<span class="op">=</span>Adam(learning_rate<span class="op">=</span>learning_rate), loss<span class="op">=</span><span class="st">&#39;binary_crossentropy&#39;</span>, metrics<span class="op">=</span>[<span class="st">&#39;accuracy&#39;</span>])</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Train the model</span></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>history <span class="op">=</span> man_model.fit(train_vectors, train_targets, epochs<span class="op">=</span>num_epoch, batch_size<span class="op">=</span>batch_size, validation_split<span class="op">=</span><span class="fl">0.2</span>,verbose <span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Epoch 1/20 
+2017/2017 [==============================] - 68s 33ms/step - loss: 0.5737 - accuracy: 0.6256 - val_loss: -0.8146 - val_accuracy: 0.0000e+00
+Epoch 2/20
+2017/2017 [==============================] - 7s 4ms/step - loss: 0.5608 - accuracy: 0.6256 - val_loss: -0.7635 - val_accuracy: 0.0000e+00
+Epoch 3/20
+2017/2017 [==============================] - 7s 4ms/step - loss: 0.5586 - accuracy: 0.6256 - val_loss: -0.8722 - val_accuracy: 0.0000e+00
+Epoch 4/20
+2017/2017 [==============================] - 8s 4ms/step - loss: 0.5565 - accuracy: 0.6256 - val_loss: -0.7889 - val_accuracy: 0.0000e+00
+Epoch 5/20
+2017/2017 [==============================] - 8s 4ms/step - loss: 0.5545 - accuracy: 0.6256 - val_loss: -0.7547 - val_accuracy: 0.0000e+00
+Epoch 6/20
+2017/2017 [==============================] - 7s 4ms/step - loss: 0.5525 - accuracy: 0.6256 - val_loss: -0.9051 - val_accuracy: 0.0000e+00
+Epoch 7/20
+2017/2017 [==============================] - 7s 4ms/step - loss: 0.5505 - accuracy: 0.6256 - val_loss: -0.8669 - val_accuracy: 0.0000e+00
+Epoch 8/20
+2017/2017 [==============================] - 7s 4ms/step - loss: 0.5484 - accuracy: 0.6256 - val_loss: -0.8923 - val_accuracy: 0.0000e+00
+Epoch 9/20
+2017/2017 [==============================] - 7s 4ms/step - loss: 0.5460 - accuracy: 0.6256 - val_loss: -0.8693 - val_accuracy: 0.0000e+00
+Epoch 10/20
+2017/2017 [==============================] - 8s 4ms/step - loss: 0.5433 - accuracy: 0.6256 - val_loss: -0.9368 - val_accuracy: 0.0000e+00
+Epoch 11/20
+2017/2017 [==============================] - 8s 4ms/step - loss: 0.5406 - accuracy: 0.6256 - val_loss: -0.8730 - val_accuracy: 0.0000e+00
+Epoch 12/20
+2017/2017 [==============================] - 7s 4ms/step - loss: 0.5372 - accuracy: 0.6256 - val_loss: -0.5806 - val_accuracy: 0.0000e+00
+Epoch 13/20
+2017/2017 [==============================] - 8s 4ms/step - loss: 0.5335 - accuracy: 0.6256 - val_loss: -0.6306 - val_accuracy: 0.0000e+00
+Epoch 14/20
+2017/2017 [==============================] - 7s 4ms/step - loss: 0.5286 - accuracy: 0.6256 - val_loss: -0.8815 - val_accuracy: 0.0000e+00
+Epoch 15/20
+2017/2017 [==============================] - 8s 4ms/step - loss: 0.5228 - accuracy: 0.6256 - val_loss: -0.8544 - val_accuracy: 0.0000e+00
+Epoch 16/20
+2017/2017 [==============================] - 8s 4ms/step - loss: 0.5157 - accuracy: 0.6256 - val_loss: -0.8216 - val_accuracy: 0.0000e+00
+Epoch 17/20
+2017/2017 [==============================] - 8s 4ms/step - loss: 0.5074 - accuracy: 0.6256 - val_loss: -0.9824 - val_accuracy: 0.0000e+00
+Epoch 18/20
+2017/2017 [==============================] - 7s 4ms/step - loss: 0.4973 - accuracy: 0.6256 - val_loss: -0.8909 - val_accuracy: 0.0000e+00
+Epoch 19/20
+2017/2017 [==============================] - 8s 4ms/step - loss: 0.4855 - accuracy: 0.6256 - val_loss: -0.7325 - val_accuracy: 0.0000e+00
+Epoch 20/20
+2017/2017 [==============================] - 8s 4ms/step - loss: 0.4723 - accuracy: 0.6256 - val_loss: -0.7527 - val_accuracy: 0.0000e+00
+CPU times: user 8min 17s, sys: 27.1 s, total: 8min 44s
+Wall time: 7min 35s
+</code></pre>
+</div>
+</div>
+<div class="cell code" id="mV4xpbqdRq9h">
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>man_model.save(<span class="st">&#39;manual_model.h5&#39;</span>)</span></code></pre></div>
+</div>
+<div class="cell code" id="vHmpW9WLVJIM">
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>man_model_training_loss <span class="op">=</span> history.history[<span class="st">&#39;loss&#39;</span>]</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>man_model_validation_loss <span class="op">=</span> history.history[<span class="st">&#39;val_loss&#39;</span>]</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>man_model_training_accuracy<span class="op">=</span> history.history[<span class="st">&#39;accuracy&#39;</span>]</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>man_model_validation_accuracy <span class="op">=</span> history.history[<span class="st">&#39;val_accuracy&#39;</span>]</span></code></pre></div>
+</div>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:887}" id="lWugh8TQQfog" data-outputId="ef3a8480-4cf0-4459-a74f-076817f1cee8">
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>plot_training_validation_acc(man_model_training_loss, man_model_validation_loss,man_model_training_accuracy,man_model_validation_accuracy)</span></code></pre></div>
+<div class="output stream stderr">
+<pre><code> 18%|██████▎                             | 3852/21880 [52:33&lt;4:05:56,  1.22it/s]
+ 15%|█████▌                               | 1407/9380 [52:33&lt;4:57:47,  2.24s/it]
+  0%|                                    | 29/21880 [23:11&lt;291:09:17, 47.97s/it]
+  0%|                                                  | 0/9380 [23:11&lt;?, ?it/s]
+  0%|                                    | 45/21880 [22:59&lt;185:56:04, 30.66s/it]
+  0%|                                                  | 0/9380 [22:59&lt;?, ?it/s]
+</code></pre>
+</div>
+<div class="output display_data">
+<p><img src="ac6f757b7185ddca42a4703a8bde56542010504c.png" /></p>
+</div>
+<div class="output display_data">
+<p><img src="7adef9591353384a4d587cc80347c6254883469b.png" /></p>
+</div>
+</div>
+<div class="cell markdown" id="X8dJhD90KUEu">
+<p>The validation loss has gradually reduced. But the accuracy has not improved. And unfortunatly the test loss is 0. If you look at the validation loss, it has not converged at all</p>
+</div>
+<section id="transfer-learning" class="cell markdown" id="oYvf3idkxQQF">
+<h1>Transfer Learning</h1>
+</section>
+<div class="cell code" id="a5gHNHafJ-5Q">
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"></code></pre></div>
+</div>
+<div class="cell markdown" id="w49fQ4R8KPI7">
+<p>The foundation model I have used is bert model,it has</p>
+<p>I have extracted the bert final layer features and used that to build the model the features extracted are passed to the 2 fully connected layers with relu activation functions and a linear function and used sigmoid to obtain the class of the logits More on the bert model considered:</p>
+<ul>
+<li>it is Bidirectional encoder based transformer,</li>
+<li>it was trained by Google on large amounts of unlabeled text data</li>
+<li>base, the size of the bert model , i.e., it has moderate number of layers and parameters compared to larger variants</li>
+<li>uncased, the text is converted to lowercase, as it mentions there is emphasis about the case of text</li>
+</ul>
+</div>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="9_J9CE-IiPKU" data-outputId="4e04a262-2772-4c3c-cbc9-d25f0cfd0497">
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">#identifying the device</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>device <span class="op">=</span> torch.device(<span class="st">&#39;cuda&#39;</span> <span class="cf">if</span> torch.cuda.is_available() <span class="cf">else</span> <span class="st">&#39;cpu&#39;</span>)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>device</span></code></pre></div>
+<div class="output execute_result" data-execution_count="14">
+<pre><code>device(type=&#39;cuda&#39;)</code></pre>
+</div>
+</div>
+<div class="cell code" id="s4NqRx3cR4fB">
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># converting the train and target to a list to load the dataset</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>X_train<span class="op">=</span><span class="bu">list</span>(X_train[<span class="st">&#39;review&#39;</span>])</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>y_train<span class="op">=</span><span class="bu">list</span>(y_train)</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>X_val<span class="op">=</span><span class="bu">list</span>(X_val[<span class="st">&#39;review&#39;</span>])</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>y_val<span class="op">=</span><span class="bu">list</span>(y_val)</span></code></pre></div>
+</div>
+<div class="cell code" id="pjItzX62dCEn">
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CustomDataset():</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&#39;&#39;&#39;</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="co">    This class is used to create a dictionary with texts and labels to be prepared for DataLoader function of torch</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="co">    &#39;&#39;&#39;</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, texts, labels):</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>        <span class="co"># text is the movie review</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.texts <span class="op">=</span> texts</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># the label of being positive or negative</span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.labels <span class="op">=</span> labels</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__len__</span>(<span class="va">self</span>):</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># length of the texts</span></span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">len</span>(<span class="va">self</span>.texts)</span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__getitem__</span>(<span class="va">self</span>, idx):</span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># returning the dictionary for each review and label</span></span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> {<span class="st">&#39;text&#39;</span>: <span class="va">self</span>.texts[idx], <span class="st">&#39;labels&#39;</span>: <span class="va">self</span>.labels[idx]}</span></code></pre></div>
+</div>
+<div class="cell code" id="Rko_78LC0qAy">
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading the train and test dataset with batches using torch dataloader</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>custom_dataset <span class="op">=</span> CustomDataset(X_train, y_train)</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>train_dataloader <span class="op">=</span> DataLoader(custom_dataset, batch_size<span class="op">=</span>batch_size)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>custom_val_dataset <span class="op">=</span> CustomDataset(X_val, y_val)</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>val_dataloader <span class="op">=</span> DataLoader(custom_val_dataset,  batch_size<span class="op">=</span>batch_size)</span></code></pre></div>
+</div>
+<div class="cell code" id="nQl13laKUZ1q">
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> FoundationModel(nn.Module):</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="co">    This class is a customized bert transformer model to classify sentiment.</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="co">    The features obtained by passing the data to bert model is retrieved</span></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="co">    and these features are passed to 2 fully connected layer, one layer and a sigmoid function</span></span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="co">    I have used Binary Cross entropy as a loss function</span></span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, basemodel_name , num_labels ):</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>        <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="co">        This function to initialize the neural network layer</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a><span class="co">        basemodel_name : passing the base model name</span></span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a><span class="co">        num_labels: number of labels to be classified to</span></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a><span class="co">        &quot;&quot;&quot;</span></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>(FoundationModel, <span class="va">self</span>).<span class="fu">__init__</span>()</span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.num_labels <span class="op">=</span> num_labels</span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># loading the base model bert with config set to return attention scores and hidden states in addition to the usual output</span></span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># The final hidden state will be the bottleneck features utilized</span></span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.model <span class="op">=</span> AutoModel.from_pretrained(basemodel_name, config <span class="op">=</span> AutoConfig.from_pretrained(basemodel_name, output_attention <span class="op">=</span> <span class="va">True</span>, output_hidden_state <span class="op">=</span> <span class="va">True</span> ) )</span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>        <span class="co"># we are setting all the parameters of the base models to be not trained during the training process, basically freezing all the layers</span></span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> param <span class="kw">in</span> <span class="va">self</span>.model.parameters():</span>
+<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a>            param.requires_grad <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># New Layer -dense layer 1</span></span>
+<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a>        <span class="co"># the first fully connected layer with input 768 anf output 512</span></span>
+<span id="cb39-25"><a href="#cb39-25" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.fc1 <span class="op">=</span> nn.Linear(<span class="dv">768</span>,<span class="dv">512</span>)</span>
+<span id="cb39-26"><a href="#cb39-26" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.relu1 <span class="op">=</span>  nn.ReLU()</span>
+<span id="cb39-27"><a href="#cb39-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-28"><a href="#cb39-28" aria-hidden="true" tabindex="-1"></a>        <span class="co"># New Layer -dense layer 2</span></span>
+<span id="cb39-29"><a href="#cb39-29" aria-hidden="true" tabindex="-1"></a>        <span class="co"># the first fully connected layer with input 512 anf output 256</span></span>
+<span id="cb39-30"><a href="#cb39-30" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.fc2 <span class="op">=</span> nn.Linear(<span class="dv">512</span>,<span class="dv">256</span>)</span>
+<span id="cb39-31"><a href="#cb39-31" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.relu2 <span class="op">=</span>  nn.ReLU()</span>
+<span id="cb39-32"><a href="#cb39-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-33"><a href="#cb39-33" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Linear layer to transform the above 256 neurons outcome to two classes</span></span>
+<span id="cb39-34"><a href="#cb39-34" aria-hidden="true" tabindex="-1"></a>        <span class="co"># then the sigmoid activation function to convert the  values between 0 and 1 with threshold set to 0.5</span></span>
+<span id="cb39-35"><a href="#cb39-35" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.classifier <span class="op">=</span> nn.Linear(<span class="dv">256</span>, num_labels )</span>
+<span id="cb39-36"><a href="#cb39-36" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.sigmoid <span class="op">=</span> nn.Sigmoid()</span>
+<span id="cb39-37"><a href="#cb39-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-38"><a href="#cb39-38" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, input_ids <span class="op">=</span> <span class="va">None</span>, attention_mask<span class="op">=</span><span class="va">None</span>, labels <span class="op">=</span> <span class="va">None</span> ):</span>
+<span id="cb39-39"><a href="#cb39-39" aria-hidden="true" tabindex="-1"></a>        <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb39-40"><a href="#cb39-40" aria-hidden="true" tabindex="-1"></a><span class="co">        This function is to build the forward propogation of the data among the layers.</span></span>
+<span id="cb39-41"><a href="#cb39-41" aria-hidden="true" tabindex="-1"></a><span class="co">        The input data is the input ids and positional encodings based on the bert tokenizer, the data format is tensor</span></span>
+<span id="cb39-42"><a href="#cb39-42" aria-hidden="true" tabindex="-1"></a><span class="co">        The output is a tensorflow function to pass a tuple of loss values, logits, hidden state and positional attentions</span></span>
+<span id="cb39-43"><a href="#cb39-43" aria-hidden="true" tabindex="-1"></a><span class="co">        input_ids: the input ids genrated by the tokenizer</span></span>
+<span id="cb39-44"><a href="#cb39-44" aria-hidden="true" tabindex="-1"></a><span class="co">        attention_mask: the positional encodings or attention mask generated by the tokenizer</span></span>
+<span id="cb39-45"><a href="#cb39-45" aria-hidden="true" tabindex="-1"></a><span class="co">        labels: the label encoding to be 1 or 0 indicating positive</span></span>
+<span id="cb39-46"><a href="#cb39-46" aria-hidden="true" tabindex="-1"></a><span class="co">        &quot;&quot;&quot;</span></span>
+<span id="cb39-47"><a href="#cb39-47" aria-hidden="true" tabindex="-1"></a>        <span class="co"># running the base model with input ids and attention ask generated by bert base model</span></span>
+<span id="cb39-48"><a href="#cb39-48" aria-hidden="true" tabindex="-1"></a>        outputs <span class="op">=</span> <span class="va">self</span>.model(input_ids <span class="op">=</span> input_ids, attention_mask <span class="op">=</span> attention_mask)</span>
+<span id="cb39-49"><a href="#cb39-49" aria-hidden="true" tabindex="-1"></a>        <span class="co"># obtaining the features from the last layer of the model</span></span>
+<span id="cb39-50"><a href="#cb39-50" aria-hidden="true" tabindex="-1"></a>        last_hidden_state <span class="op">=</span> outputs[<span class="dv">0</span>]</span>
+<span id="cb39-51"><a href="#cb39-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-52"><a href="#cb39-52" aria-hidden="true" tabindex="-1"></a>        <span class="co"># New Layer -dense layer 1</span></span>
+<span id="cb39-53"><a href="#cb39-53" aria-hidden="true" tabindex="-1"></a>        <span class="co"># first fully connected layer with relu activation function</span></span>
+<span id="cb39-54"><a href="#cb39-54" aria-hidden="true" tabindex="-1"></a>        <span class="co"># passing the last layer features to the fully connected layers</span></span>
+<span id="cb39-55"><a href="#cb39-55" aria-hidden="true" tabindex="-1"></a>        <span class="co"># reducing the 768 features from the hidden state to 512 features</span></span>
+<span id="cb39-56"><a href="#cb39-56" aria-hidden="true" tabindex="-1"></a>        sequence_outputs1<span class="op">=</span> <span class="va">self</span>.fc1(last_hidden_state)</span>
+<span id="cb39-57"><a href="#cb39-57" aria-hidden="true" tabindex="-1"></a>        sequence_outputs1 <span class="op">=</span> <span class="va">self</span>.relu1(sequence_outputs1)</span>
+<span id="cb39-58"><a href="#cb39-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-59"><a href="#cb39-59" aria-hidden="true" tabindex="-1"></a>        <span class="co"># New Layer -dense layer 2</span></span>
+<span id="cb39-60"><a href="#cb39-60" aria-hidden="true" tabindex="-1"></a>        <span class="co"># second fully connected layer with relu activation function</span></span>
+<span id="cb39-61"><a href="#cb39-61" aria-hidden="true" tabindex="-1"></a>        <span class="co"># passing the first connected layer 512 features to the second fully connected layer</span></span>
+<span id="cb39-62"><a href="#cb39-62" aria-hidden="true" tabindex="-1"></a>        <span class="co"># and reducing the dimention to 256 features</span></span>
+<span id="cb39-63"><a href="#cb39-63" aria-hidden="true" tabindex="-1"></a>        sequence_outputs2<span class="op">=</span> <span class="va">self</span>.fc2(sequence_outputs1)</span>
+<span id="cb39-64"><a href="#cb39-64" aria-hidden="true" tabindex="-1"></a>        sequence_outputs2 <span class="op">=</span> <span class="va">self</span>.relu2(sequence_outputs2)</span>
+<span id="cb39-65"><a href="#cb39-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-66"><a href="#cb39-66" aria-hidden="true" tabindex="-1"></a>        <span class="co"># linear layer to transform the above 256 neurons outcome to two classes,</span></span>
+<span id="cb39-67"><a href="#cb39-67" aria-hidden="true" tabindex="-1"></a>        <span class="co"># this is because of the sentiment is 2 clases, positive and negative</span></span>
+<span id="cb39-68"><a href="#cb39-68" aria-hidden="true" tabindex="-1"></a>        <span class="co"># then the sigmoid activation function to convert the  values between 0 and 1 with threshold set to 0.5</span></span>
+<span id="cb39-69"><a href="#cb39-69" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="va">self</span>.classifier(sequence_outputs2[:, <span class="dv">0</span>, : ].view(<span class="op">-</span><span class="dv">1</span>, <span class="dv">256</span> ))</span>
+<span id="cb39-70"><a href="#cb39-70" aria-hidden="true" tabindex="-1"></a>        logits <span class="op">=</span> torch.sigmoid(x)</span>
+<span id="cb39-71"><a href="#cb39-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-72"><a href="#cb39-72" aria-hidden="true" tabindex="-1"></a>        <span class="co"># computing the loss value using Binary cross Entropy Loss function</span></span>
+<span id="cb39-73"><a href="#cb39-73" aria-hidden="true" tabindex="-1"></a>        <span class="co"># calculated between the logits computed from the sigmoid function data format is list of tensors([1,0])</span></span>
+<span id="cb39-74"><a href="#cb39-74" aria-hidden="true" tabindex="-1"></a>        <span class="co"># and the actual labels converted to  a list of tensors ([1,0]) using torch vstack</span></span>
+<span id="cb39-75"><a href="#cb39-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-76"><a href="#cb39-76" aria-hidden="true" tabindex="-1"></a>        loss <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb39-77"><a href="#cb39-77" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> labels <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb39-78"><a href="#cb39-78" aria-hidden="true" tabindex="-1"></a>            loss_func <span class="op">=</span> nn.BCELoss()</span>
+<span id="cb39-79"><a href="#cb39-79" aria-hidden="true" tabindex="-1"></a>            loss <span class="op">=</span> loss_func(logits, torch.vstack(( <span class="dv">1</span> <span class="op">-</span> labels,labels)).T) <span class="co"># converting the label to 2 classes tensor</span></span>
+<span id="cb39-80"><a href="#cb39-80" aria-hidden="true" tabindex="-1"></a>        <span class="co"># returning the tuple using a tensorflow TokenClassifierOutput with tensors of loss, logits , hiffen state and attentions</span></span>
+<span id="cb39-81"><a href="#cb39-81" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> TokenClassifierOutput(loss<span class="op">=</span>loss, logits<span class="op">=</span>logits,hidden_states<span class="op">=</span>outputs.hidden_states, attentions<span class="op">=</span>outputs.attentions )</span></code></pre></div>
+</div>
+<div class="cell code" id="LBfyA_pr64PQ">
+<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># loading the bert tokenizer</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>basemodel_name_tokenizer <span class="op">=</span> <span class="st">&quot;distilbert-base-uncased&quot;</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>tokenizer <span class="op">=</span> DistilBertTokenizer.from_pretrained(basemodel_name_tokenizer)</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>tokenizer.model_max_len<span class="op">=</span><span class="dv">512</span></span></code></pre></div>
+</div>
+<div class="cell code" id="dOeEmUodZpAQ">
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># initializing the model by passing the bert model and classes to be 2</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co"># converting this model based on the device</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>foundation_model <span class="op">=</span> FoundationModel(basemodel_name <span class="op">=</span><span class="st">&#39;bert-base-uncased&#39;</span>, num_labels<span class="op">=</span><span class="dv">2</span> ).to(device)</span></code></pre></div>
+</div>
+<div class="cell code" id="Bv5WN1KKbb1E">
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> train_model(model, train_dataset, test_dataset, num_epochs<span class="op">=</span>num_epoch, learning_rate<span class="op">=</span><span class="fl">2e-5</span>,weight_decay<span class="op">=</span><span class="fl">5e-2</span>):</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&#39;&#39;&#39;</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="co">    This function is to train the model with respective batches of data with provided learning rate and parameters</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co">    model: the model of to be trained on</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="co">    train_dataset: the training data loaded using torch.dataLoader is passed</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="co">    test_dataset: the testing data loaded using torch.dataLoader is passed</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="co">    num_epochs: the total number of epochs to be run on</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="co">    learning_rate: the learning rate to train on</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="co">    weight_decay: the weight decay is regularization technique that penalizes large weights</span></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="co">    &#39;&#39;&#39;</span></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Adam optimizer initialized to minimize the loss</span></span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># i have used very small learning rate and a small weight decay to penalize the features</span></span>
+<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>    optimizer <span class="op">=</span> Adam(model.parameters(), lr <span class="op">=</span> learning_rate,</span>
+<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>                      weight_decay<span class="op">=</span>weight_decay )</span>
+<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># setting the number of steps to update the models parameters on the batch of training data</span></span>
+<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a>    num_training_steps <span class="op">=</span> num_epochs <span class="op">*</span> <span class="bu">len</span>(train_dataset )</span>
+<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># the learning rate scheduler  using StepLR function.</span></span>
+<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Basically this scheduler is used to adjust the learning rate during training this is called step-wise strategy</span></span>
+<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># This helps in the optimization process and avoid overshooting the values</span></span>
+<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># the gamma value is set to control over the reduction of learning rate</span></span>
+<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a>    scheduler <span class="op">=</span> lr_scheduler.StepLR(optimizer<span class="op">=</span> optimizer, step_size<span class="op">=</span>num_training_steps, gamma<span class="op">=</span><span class="fl">0.001</span>)</span>
+<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a>    train_losses, val_losses <span class="op">=</span> [], [] <span class="co"># initiatinf the lists to store the losses</span></span>
+<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-24"><a href="#cb42-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># to show the progress leve of training</span></span>
+<span id="cb42-25"><a href="#cb42-25" aria-hidden="true" tabindex="-1"></a>    progress_bar_train <span class="op">=</span> tqdm(<span class="bu">range</span>(num_training_steps))</span>
+<span id="cb42-26"><a href="#cb42-26" aria-hidden="true" tabindex="-1"></a>    progress_bar_eval <span class="op">=</span> tqdm(<span class="bu">range</span>(num_epoch <span class="op">*</span> <span class="bu">len</span>(test_dataset) ))</span>
+<span id="cb42-27"><a href="#cb42-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># intializing the train and test performance metrics</span></span>
+<span id="cb42-28"><a href="#cb42-28" aria-hidden="true" tabindex="-1"></a>    train_metrics<span class="op">=</span>[]</span>
+<span id="cb42-29"><a href="#cb42-29" aria-hidden="true" tabindex="-1"></a>    test_metrics<span class="op">=</span>[]</span>
+<span id="cb42-30"><a href="#cb42-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-31"><a href="#cb42-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> epoch <span class="kw">in</span> <span class="bu">range</span>(num_epoch):</span>
+<span id="cb42-32"><a href="#cb42-32" aria-hidden="true" tabindex="-1"></a>      <span class="co"># for each epoch train the model passed</span></span>
+<span id="cb42-33"><a href="#cb42-33" aria-hidden="true" tabindex="-1"></a>      model.train()</span>
+<span id="cb42-34"><a href="#cb42-34" aria-hidden="true" tabindex="-1"></a>        <span class="co"># setting the total loss as 0</span></span>
+<span id="cb42-35"><a href="#cb42-35" aria-hidden="true" tabindex="-1"></a>      total_loss <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb42-36"><a href="#cb42-36" aria-hidden="true" tabindex="-1"></a>        <span class="co"># setting the predictions and labels list to store the predictions and labels to compute accuracy</span></span>
+<span id="cb42-37"><a href="#cb42-37" aria-hidden="true" tabindex="-1"></a>      predictions,labels<span class="op">=</span>[],[]</span>
+<span id="cb42-38"><a href="#cb42-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-39"><a href="#cb42-39" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> batch <span class="kw">in</span> train_dataset:</span>
+<span id="cb42-40"><a href="#cb42-40" aria-hidden="true" tabindex="-1"></a>          <span class="co"># training the model with each batch of data</span></span>
+<span id="cb42-41"><a href="#cb42-41" aria-hidden="true" tabindex="-1"></a>          <span class="co"># saving the labels of the batch the labels list</span></span>
+<span id="cb42-42"><a href="#cb42-42" aria-hidden="true" tabindex="-1"></a>          labels.extend(batch[<span class="st">&#39;labels&#39;</span>].cpu().numpy())</span>
+<span id="cb42-43"><a href="#cb42-43" aria-hidden="true" tabindex="-1"></a>          <span class="co"># Using the bert based tokenizer to create the input_ids and the attention_masks for each word</span></span>
+<span id="cb42-44"><a href="#cb42-44" aria-hidden="true" tabindex="-1"></a>          inputs <span class="op">=</span> tokenizer(batch[<span class="st">&#39;text&#39;</span>], return_tensors<span class="op">=</span><span class="st">&#39;pt&#39;</span>, padding<span class="op">=</span><span class="st">&#39;max_length&#39;</span>, truncation<span class="op">=</span><span class="va">True</span>, max_length<span class="op">=</span><span class="dv">512</span>)</span>
+<span id="cb42-45"><a href="#cb42-45" aria-hidden="true" tabindex="-1"></a>          <span class="co"># converting the labels for batch to respective device</span></span>
+<span id="cb42-46"><a href="#cb42-46" aria-hidden="true" tabindex="-1"></a>          inputs[<span class="st">&#39;labels&#39;</span>] <span class="op">=</span>  batch[<span class="st">&#39;labels&#39;</span>].to(device, dtype<span class="op">=</span>torch.float32)</span>
+<span id="cb42-47"><a href="#cb42-47" aria-hidden="true" tabindex="-1"></a>          <span class="co"># creating a dictionary of the inputids and attentitonmals and labels</span></span>
+<span id="cb42-48"><a href="#cb42-48" aria-hidden="true" tabindex="-1"></a>          batch <span class="op">=</span> { k: v.to(device) <span class="cf">for</span> k, v <span class="kw">in</span> inputs.items() }</span>
+<span id="cb42-49"><a href="#cb42-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-50"><a href="#cb42-50" aria-hidden="true" tabindex="-1"></a>          <span class="co"># setting the gradients of the parameters being optimized to zero</span></span>
+<span id="cb42-51"><a href="#cb42-51" aria-hidden="true" tabindex="-1"></a>          <span class="co"># to prevent accumulations of the gradients across multiple iterations and batches</span></span>
+<span id="cb42-52"><a href="#cb42-52" aria-hidden="true" tabindex="-1"></a>          optimizer.zero_grad()</span>
+<span id="cb42-53"><a href="#cb42-53" aria-hidden="true" tabindex="-1"></a>          <span class="co"># calling the model with the batch containing a portion of inputids,attention ids and labels</span></span>
+<span id="cb42-54"><a href="#cb42-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-55"><a href="#cb42-55" aria-hidden="true" tabindex="-1"></a>          outputs <span class="op">=</span> model(<span class="op">**</span>batch)</span>
+<span id="cb42-56"><a href="#cb42-56" aria-hidden="true" tabindex="-1"></a>          <span class="co"># obtaining the loss from the output tuple of the model</span></span>
+<span id="cb42-57"><a href="#cb42-57" aria-hidden="true" tabindex="-1"></a>          loss <span class="op">=</span> outputs.loss</span>
+<span id="cb42-58"><a href="#cb42-58" aria-hidden="true" tabindex="-1"></a>          <span class="co"># if the loss is not none then we do following,</span></span>
+<span id="cb42-59"><a href="#cb42-59" aria-hidden="true" tabindex="-1"></a>          <span class="cf">if</span> loss <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb42-60"><a href="#cb42-60" aria-hidden="true" tabindex="-1"></a>              <span class="co"># add the loss to total loss</span></span>
+<span id="cb42-61"><a href="#cb42-61" aria-hidden="true" tabindex="-1"></a>              <span class="co"># call the b</span></span>
+<span id="cb42-62"><a href="#cb42-62" aria-hidden="true" tabindex="-1"></a>            total_loss <span class="op">+=</span> loss.item()</span>
+<span id="cb42-63"><a href="#cb42-63" aria-hidden="true" tabindex="-1"></a>            loss.backward()</span>
+<span id="cb42-64"><a href="#cb42-64" aria-hidden="true" tabindex="-1"></a>            optimizer.step()</span>
+<span id="cb42-65"><a href="#cb42-65" aria-hidden="true" tabindex="-1"></a>            scheduler.step()</span>
+<span id="cb42-66"><a href="#cb42-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-67"><a href="#cb42-67" aria-hidden="true" tabindex="-1"></a>          logits <span class="op">=</span> outputs.logits</span>
+<span id="cb42-68"><a href="#cb42-68" aria-hidden="true" tabindex="-1"></a>          predictions.extend(logits)</span>
+<span id="cb42-69"><a href="#cb42-69" aria-hidden="true" tabindex="-1"></a>          <span class="co"># updating the progress bar</span></span>
+<span id="cb42-70"><a href="#cb42-70" aria-hidden="true" tabindex="-1"></a>          progress_bar_train.update(<span class="dv">1</span>)</span>
+<span id="cb42-71"><a href="#cb42-71" aria-hidden="true" tabindex="-1"></a>    <span class="co"># computing the accuracy of the model</span></span>
+<span id="cb42-72"><a href="#cb42-72" aria-hidden="true" tabindex="-1"></a>      accuracy<span class="op">=</span> Accuracy(task<span class="op">=</span><span class="st">&quot;multiclass&quot;</span>, num_classes<span class="op">=</span><span class="dv">2</span>).to(device)</span>
+<span id="cb42-73"><a href="#cb42-73" aria-hidden="true" tabindex="-1"></a>        <span class="co"># converting the predictions and labels to same data type and size</span></span>
+<span id="cb42-74"><a href="#cb42-74" aria-hidden="true" tabindex="-1"></a>      accuracy_val<span class="op">=</span>accuracy(torch.stack(predictions).squeeze(<span class="dv">1</span>).detach().cpu().to(torch.float32),torch.tensor(labels).to(torch.<span class="bu">long</span>))</span>
+<span id="cb42-75"><a href="#cb42-75" aria-hidden="true" tabindex="-1"></a>      <span class="co"># appending the accuracy values</span></span>
+<span id="cb42-76"><a href="#cb42-76" aria-hidden="true" tabindex="-1"></a>      train_metrics.append(accuracy_val)</span>
+<span id="cb42-77"><a href="#cb42-77" aria-hidden="true" tabindex="-1"></a>        <span class="co"># appending the average loss by dividing the toal loss computed in each batch to the the lenth of the dataset</span></span>
+<span id="cb42-78"><a href="#cb42-78" aria-hidden="true" tabindex="-1"></a>      average_train_loss <span class="op">=</span> total_loss <span class="op">/</span> <span class="bu">len</span>(custom_dataset)</span>
+<span id="cb42-79"><a href="#cb42-79" aria-hidden="true" tabindex="-1"></a>        <span class="co"># appending triain loss</span></span>
+<span id="cb42-80"><a href="#cb42-80" aria-hidden="true" tabindex="-1"></a>      train_losses.append(average_train_loss)</span>
+<span id="cb42-81"><a href="#cb42-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-82"><a href="#cb42-82" aria-hidden="true" tabindex="-1"></a>        <span class="co"># calling  eval function to evaluate the test/validation dataset</span></span>
+<span id="cb42-83"><a href="#cb42-83" aria-hidden="true" tabindex="-1"></a>      model.<span class="bu">eval</span>()</span>
+<span id="cb42-84"><a href="#cb42-84" aria-hidden="true" tabindex="-1"></a>        <span class="co"># initializing the val_loss to 0 and predictions and labels as lists</span></span>
+<span id="cb42-85"><a href="#cb42-85" aria-hidden="true" tabindex="-1"></a>      val_loss <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb42-86"><a href="#cb42-86" aria-hidden="true" tabindex="-1"></a>      predictions, labels <span class="op">=</span> [], []</span>
+<span id="cb42-87"><a href="#cb42-87" aria-hidden="true" tabindex="-1"></a>        <span class="co"># for each batch in the test dataset</span></span>
+<span id="cb42-88"><a href="#cb42-88" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> batch <span class="kw">in</span> test_dataset:</span>
+<span id="cb42-89"><a href="#cb42-89" aria-hidden="true" tabindex="-1"></a>          <span class="co"># extending labels list with the test batch labels</span></span>
+<span id="cb42-90"><a href="#cb42-90" aria-hidden="true" tabindex="-1"></a>          labels.extend(batch[<span class="st">&#39;labels&#39;</span>].cpu().numpy())</span>
+<span id="cb42-91"><a href="#cb42-91" aria-hidden="true" tabindex="-1"></a>          <span class="co"># calling the tokenizer to tokenize the data and obtain the ids and attention mask</span></span>
+<span id="cb42-92"><a href="#cb42-92" aria-hidden="true" tabindex="-1"></a>          inputs <span class="op">=</span> tokenizer(batch[<span class="st">&#39;text&#39;</span>], return_tensors<span class="op">=</span><span class="st">&#39;pt&#39;</span>, padding<span class="op">=</span><span class="st">&#39;max_length&#39;</span>, truncation<span class="op">=</span><span class="va">True</span>, max_length<span class="op">=</span><span class="dv">512</span>)</span>
+<span id="cb42-93"><a href="#cb42-93" aria-hidden="true" tabindex="-1"></a>          <span class="co"># converting the labels to respective device</span></span>
+<span id="cb42-94"><a href="#cb42-94" aria-hidden="true" tabindex="-1"></a>          inputs[<span class="st">&#39;labels&#39;</span>] <span class="op">=</span> batch[<span class="st">&#39;labels&#39;</span>].to(device, dtype<span class="op">=</span>torch.float32)</span>
+<span id="cb42-95"><a href="#cb42-95" aria-hidden="true" tabindex="-1"></a>          <span class="co"># creating dict of inputids and attention ids and also labels</span></span>
+<span id="cb42-96"><a href="#cb42-96" aria-hidden="true" tabindex="-1"></a>          batch <span class="op">=</span> { k: v.to(device) <span class="cf">for</span> k, v <span class="kw">in</span> inputs.items() }</span>
+<span id="cb42-97"><a href="#cb42-97" aria-hidden="true" tabindex="-1"></a>          <span class="cf">with</span> torch.no_grad():</span>
+<span id="cb42-98"><a href="#cb42-98" aria-hidden="true" tabindex="-1"></a>              <span class="co"># ensuring to temporarily disable gradient computation</span></span>
+<span id="cb42-99"><a href="#cb42-99" aria-hidden="true" tabindex="-1"></a>              <span class="co"># i.e. will not track operations for gradient computation</span></span>
+<span id="cb42-100"><a href="#cb42-100" aria-hidden="true" tabindex="-1"></a>              <span class="co"># calling the model with the test batch</span></span>
+<span id="cb42-101"><a href="#cb42-101" aria-hidden="true" tabindex="-1"></a>              outputs <span class="op">=</span> model(<span class="op">**</span>batch)</span>
+<span id="cb42-102"><a href="#cb42-102" aria-hidden="true" tabindex="-1"></a>              loss <span class="op">=</span> outputs.loss <span class="co"># obtaining the loss</span></span>
+<span id="cb42-103"><a href="#cb42-103" aria-hidden="true" tabindex="-1"></a>              <span class="co"># if the loss is not None</span></span>
+<span id="cb42-104"><a href="#cb42-104" aria-hidden="true" tabindex="-1"></a>              <span class="cf">if</span> loss <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb42-105"><a href="#cb42-105" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># adding the loss to validation loss</span></span>
+<span id="cb42-106"><a href="#cb42-106" aria-hidden="true" tabindex="-1"></a>                val_loss <span class="op">+=</span> loss.item()</span>
+<span id="cb42-107"><a href="#cb42-107" aria-hidden="true" tabindex="-1"></a>                  <span class="co"># ontaining logits from the model output</span></span>
+<span id="cb42-108"><a href="#cb42-108" aria-hidden="true" tabindex="-1"></a>                logits <span class="op">=</span> outputs.logits</span>
+<span id="cb42-109"><a href="#cb42-109" aria-hidden="true" tabindex="-1"></a>                predictions.extend(logits )</span>
+<span id="cb42-110"><a href="#cb42-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-111"><a href="#cb42-111" aria-hidden="true" tabindex="-1"></a>          <span class="co">#updating the progress bar</span></span>
+<span id="cb42-112"><a href="#cb42-112" aria-hidden="true" tabindex="-1"></a>          progress_bar_eval.update(<span class="dv">1</span>)</span>
+<span id="cb42-113"><a href="#cb42-113" aria-hidden="true" tabindex="-1"></a>      <span class="co"># calculating accuracy for the validation dataset</span></span>
+<span id="cb42-114"><a href="#cb42-114" aria-hidden="true" tabindex="-1"></a>      accuracy<span class="op">=</span> Accuracy(task<span class="op">=</span><span class="st">&quot;multiclass&quot;</span>, num_classes<span class="op">=</span><span class="dv">2</span>).to(device, dtype<span class="op">=</span>torch.float32)</span>
+<span id="cb42-115"><a href="#cb42-115" aria-hidden="true" tabindex="-1"></a>        <span class="co"># converting the predictions and labels to the same datatype and size</span></span>
+<span id="cb42-116"><a href="#cb42-116" aria-hidden="true" tabindex="-1"></a>      accuracy_val <span class="op">=</span> accuracy(torch.stack(predictions).squeeze(<span class="dv">1</span>).detach().cpu().to(torch.float32),torch.tensor(labels).to(torch.<span class="bu">long</span>))</span>
+<span id="cb42-117"><a href="#cb42-117" aria-hidden="true" tabindex="-1"></a>      test_metrics.append(accuracy_val)</span>
+<span id="cb42-118"><a href="#cb42-118" aria-hidden="true" tabindex="-1"></a>        <span class="co">## caculating the validation loss</span></span>
+<span id="cb42-119"><a href="#cb42-119" aria-hidden="true" tabindex="-1"></a>      average_val_loss <span class="op">=</span> val_loss <span class="op">/</span> <span class="bu">len</span>(test_dataset)</span>
+<span id="cb42-120"><a href="#cb42-120" aria-hidden="true" tabindex="-1"></a>      val_losses.append(average_val_loss)</span>
+<span id="cb42-121"><a href="#cb42-121" aria-hidden="true" tabindex="-1"></a>      <span class="bu">print</span>(<span class="ss">f&#39;Epoch </span><span class="sc">{</span>epoch <span class="op">+</span> <span class="dv">1</span><span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>num_epochs<span class="sc">}</span><span class="ss">: Train Loss - </span><span class="sc">{</span>average_train_loss<span class="sc">:.4f}</span><span class="ss">, Val Loss - </span><span class="sc">{</span>average_val_loss<span class="sc">:.4f}</span><span class="ss">, Train Accuracy - </span><span class="sc">{</span>train_metrics[epoch]<span class="sc">}</span><span class="ss">, Test Accuracy - </span><span class="sc">{</span>test_metrics[epoch]<span class="sc">}</span><span class="ss">&#39;</span>)</span>
+<span id="cb42-122"><a href="#cb42-122" aria-hidden="true" tabindex="-1"></a>    <span class="co"># returning metrics</span></span>
+<span id="cb42-123"><a href="#cb42-123" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> train_losses, val_losses,train_metrics,test_metrics</span>
+<span id="cb42-124"><a href="#cb42-124" aria-hidden="true" tabindex="-1"></a></span></code></pre></div>
+</div>
+<div class="cell code" data-colab="{&quot;referenced_widgets&quot;:[&quot;8d4a845e430948db8c69ca3c91c02da0&quot;,&quot;bd8d6f685bd04868807141f84cd80bed&quot;]}" id="vBTRzkRJJ-5R" data-outputId="e675d8a5-08dd-479a-8917-2e28a409bc66">
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># calling the train model for FOundation model 52 minutes for 6 epochs</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>foundation_model_train_losses, foundation_model_val_losses,foundation_model_train_metrics,foundation_model_test_metrics <span class="op">=</span> train_model(foundation_model, train_dataloader, val_dataloader,num_epochs<span class="op">=</span>num_epoch)</span></code></pre></div>
+<div class="output display_data">
+<div class="sourceCode" id="cb44"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;8d4a845e430948db8c69ca3c91c02da0&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb45"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;bd8d6f685bd04868807141f84cd80bed&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output stream stdout">
+<pre><code>Epoch 1/20: Train Loss - 0.0215, Val Loss - 0.6786, Train Accuracy - 0.6471428275108337, Test Accuracy - 0.7258666753768921
+Epoch 2/20: Train Loss - 0.0207, Val Loss - 0.6063, Train Accuracy - 0.7385143041610718, Test Accuracy - 0.7657999992370605
+Epoch 3/20: Train Loss - 0.0172, Val Loss - 0.4715, Train Accuracy - 0.7768856883049011, Test Accuracy - 0.8086000084877014
+Epoch 4/20: Train Loss - 0.0151, Val Loss - 0.4421, Train Accuracy - 0.7991714477539062, Test Accuracy - 0.8180000185966492
+Epoch 5/20: Train Loss - 0.0146, Val Loss - 0.4332, Train Accuracy - 0.805485725402832, Test Accuracy - 0.8196666836738586
+Epoch 6/20: Train Loss - 0.0144, Val Loss - 0.4277, Train Accuracy - 0.8073428869247437, Test Accuracy - 0.8216000199317932
+Epoch 7/20: Train Loss - 0.0143, Val Loss - 0.4230, Train Accuracy - 0.8077999949455261, Test Accuracy - 0.8256666660308838
+Epoch 8/20: Train Loss - 0.0143, Val Loss - 0.4203, Train Accuracy - 0.8073999881744385, Test Accuracy - 0.8271333575248718
+Epoch 9/20: Train Loss - 0.0141, Val Loss - 0.4204, Train Accuracy - 0.8082285523414612, Test Accuracy - 0.8253999948501587
+Epoch 10/20: Train Loss - 0.0141, Val Loss - 0.4194, Train Accuracy - 0.8109999895095825, Test Accuracy - 0.8249333500862122
+Epoch 11/20: Train Loss - 0.0141, Val Loss - 0.4165, Train Accuracy - 0.8071714043617249, Test Accuracy - 0.8278666734695435
+Epoch 12/20: Train Loss - 0.0141, Val Loss - 0.4178, Train Accuracy - 0.8097142577171326, Test Accuracy - 0.8269333243370056
+Epoch 13/20: Train Loss - 0.0141, Val Loss - 0.4169, Train Accuracy - 0.8079428672790527, Test Accuracy - 0.8264666795730591
+Epoch 14/20: Train Loss - 0.0140, Val Loss - 0.4165, Train Accuracy - 0.8111714124679565, Test Accuracy - 0.8266666531562805
+Epoch 15/20: Train Loss - 0.0140, Val Loss - 0.4177, Train Accuracy - 0.8113999962806702, Test Accuracy - 0.8244666457176208
+Epoch 16/20: Train Loss - 0.0140, Val Loss - 0.4147, Train Accuracy - 0.8093714118003845, Test Accuracy - 0.8295333385467529
+Epoch 17/20: Train Loss - 0.0140, Val Loss - 0.4154, Train Accuracy - 0.8094000220298767, Test Accuracy - 0.8272666931152344
+Epoch 18/20: Train Loss - 0.0140, Val Loss - 0.4141, Train Accuracy - 0.8106285929679871, Test Accuracy - 0.8294000029563904
+Epoch 19/20: Train Loss - 0.0140, Val Loss - 0.4155, Train Accuracy - 0.8120571374893188, Test Accuracy - 0.8254666924476624
+Epoch 20/20: Train Loss - 0.0140, Val Loss - 0.4161, Train Accuracy - 0.8119714260101318, Test Accuracy - 0.8257333040237427
+CPU times: user 2h 54min 56s, sys: 9.3 s, total: 2h 55min 5s
+Wall time: 2h 54min 33s
+</code></pre>
+</div>
+</div>
+<div class="cell code" id="OBRRhESfJ-5R">
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>smooth<span class="op">=</span><span class="dv">0</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_training_validation_acc(loss,val_loss,acc, val_acc):</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>    epochs <span class="op">=</span> <span class="bu">range</span>(<span class="bu">len</span>(acc))</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>    plt.plot(epochs, acc, <span class="st">&#39;bo&#39;</span>, label<span class="op">=</span><span class="st">&#39;Training acc&#39;</span>)</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>    plt.plot(epochs, val_acc, <span class="st">&#39;b&#39;</span>, label<span class="op">=</span><span class="st">&#39;Validation acc&#39;</span>)</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="st">&#39;Training and validation accuracy&#39;</span>)</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>    plt.legend()</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>    plt.figure()</span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>    plt.plot(epochs, loss, <span class="st">&#39;bo&#39;</span>, label<span class="op">=</span><span class="st">&#39;Training loss&#39;</span>)</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a>    plt.plot(epochs, val_loss, <span class="st">&#39;b&#39;</span>, label<span class="op">=</span><span class="st">&#39;Validation loss&#39;</span>)</span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="st">&#39;Training and validation loss&#39;</span>)</span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>    plt.legend()</span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a>    plt.show()</span></code></pre></div>
+</div>
+<div class="cell code" id="OZLelOAMvbSu" data-outputId="b3a5386e-9714-4c02-ed06-f72f0297eae0">
+<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>plot_training_validation_acc(foundation_model_train_losses, foundation_model_val_losses,[item.item() <span class="cf">for</span> item <span class="kw">in</span> foundation_model_train_metrics],[item.item() <span class="cf">for</span> item <span class="kw">in</span> foundation_model_test_metrics])</span></code></pre></div>
+<div class="output display_data">
+<p><img src="23670f54641c4cb474342019625c48a71161badb.png" /></p>
+</div>
+<div class="output display_data">
+<p><img src="bacab4bf586759b8d09e65905a192a4c1ccea314.png" /></p>
+</div>
+</div>
+<div class="cell code" id="xCdxkMgFJ-5S">
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The above model training took about 3 hours, and we can see the accuracy is convered to around 82% however, it is known that with IMDB dataset we need to get a better accuracy</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="co"># the validation loss is still at 0.4, there is more for the model to learn,</span></span></code></pre></div>
+</div>
+<div class="cell code" id="kYuSH8l6S_BE">
+<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>torch.save(foundation_model.state_dict(), <span class="st">&#39;foundation_model&#39;</span><span class="op">+</span>add_name<span class="op">+</span><span class="st">&#39;.h5&#39;</span>)</span></code></pre></div>
+</div>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="gci2pmWfcjAb" data-outputId="d50635b1-de10-4553-c91c-11c663eebc73">
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, param <span class="kw">in</span> foundation_model.named_parameters():</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> param.requires_grad <span class="op">==</span> <span class="va">True</span>:</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>param<span class="sc">.</span>size()<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>fc1.weight: torch.Size([512, 768])
+fc1.bias: torch.Size([512])
+fc2.weight: torch.Size([256, 512])
+fc2.bias: torch.Size([256])
+classifier.weight: torch.Size([2, 256])
+classifier.bias: torch.Size([2])
+</code></pre>
+</div>
+</div>
+<div class="cell code" id="vsihWJdoJ-5S">
+<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># list of all the parameters that is being trained in this process</span></span></code></pre></div>
+</div>
+<section id="fine-tuning" class="cell markdown" id="PNxDZVv7xor4">
+<h1>Fine Tuning</h1>
+</section>
+<div class="cell markdown" id="inJhOXMjxmRz">
+<ol>
+<li>Perform fine tuning upon the model by training some layers within the foundational model. Verify that the model converges.</li>
+</ol>
+</div>
+<div class="cell code" id="iYeFdOi0J-5S">
+<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> FineTuneLayer1Model(nn.Module):</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="co">    This class is a customized bert transformer model to classify sentiment.</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="co">    and also updating the weights of the bert last layer.</span></span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="co">    The features obtained by passing the data to bert model is retrieved</span></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="co">    and these features are passed to 2 fully connected layer, one layer and a sigmoid function</span></span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a><span class="co">    I have used Binary Cross entropy as a loss function</span></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, basemodel_name , num_labels ):</span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>        <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a><span class="co">        This function to initialize the neural network layer</span></span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a><span class="co">        basemodel_name : passing the base model name</span></span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a><span class="co">        num_labels: number of labels to be classified to</span></span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a><span class="co">        &quot;&quot;&quot;</span></span>
+<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>(FineTuneLayer1Model, <span class="va">self</span>).<span class="fu">__init__</span>()</span>
+<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.num_labels <span class="op">=</span> num_labels</span>
+<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># loading the base model bert with config set to return attention scores and hidden states in addition to the usual output</span></span>
+<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a>        <span class="co"># The final hidden state will be the bottleneck features utilized</span></span>
+<span id="cb54-19"><a href="#cb54-19" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.model <span class="op">=</span> AutoModel.from_pretrained(basemodel_name, config <span class="op">=</span> AutoConfig.from_pretrained(basemodel_name, output_attention <span class="op">=</span> <span class="va">True</span>, output_hidden_state <span class="op">=</span> <span class="va">True</span> ) )</span>
+<span id="cb54-20"><a href="#cb54-20" aria-hidden="true" tabindex="-1"></a>        <span class="co"># we are setting all the parameters of the base models to be not trained during the training process, basically freezing all the layers</span></span>
+<span id="cb54-21"><a href="#cb54-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> param <span class="kw">in</span> <span class="va">self</span>.model.parameters():</span>
+<span id="cb54-22"><a href="#cb54-22" aria-hidden="true" tabindex="-1"></a>            param.requires_grad <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb54-23"><a href="#cb54-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># the model 11th transformer layer output parameters are set to train</span></span>
+<span id="cb54-24"><a href="#cb54-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> param <span class="kw">in</span> <span class="va">self</span>.model.encoder.layer[<span class="op">-</span><span class="dv">1</span>].output.parameters():</span>
+<span id="cb54-25"><a href="#cb54-25" aria-hidden="true" tabindex="-1"></a>            param.requires_grad <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb54-26"><a href="#cb54-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-27"><a href="#cb54-27" aria-hidden="true" tabindex="-1"></a>        <span class="co"># New Layer -dense layer 1</span></span>
+<span id="cb54-28"><a href="#cb54-28" aria-hidden="true" tabindex="-1"></a>        <span class="co"># the first fully connected layer with input 768 anf output 512</span></span>
+<span id="cb54-29"><a href="#cb54-29" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.fc1 <span class="op">=</span> nn.Linear(<span class="dv">768</span>,<span class="dv">512</span>)</span>
+<span id="cb54-30"><a href="#cb54-30" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.relu1 <span class="op">=</span>  nn.ReLU()</span>
+<span id="cb54-31"><a href="#cb54-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-32"><a href="#cb54-32" aria-hidden="true" tabindex="-1"></a>        <span class="co"># New Layer -dense layer 2</span></span>
+<span id="cb54-33"><a href="#cb54-33" aria-hidden="true" tabindex="-1"></a>        <span class="co"># the first fully connected layer with input 512 anf output 256</span></span>
+<span id="cb54-34"><a href="#cb54-34" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.fc2 <span class="op">=</span> nn.Linear(<span class="dv">512</span>,<span class="dv">256</span>)</span>
+<span id="cb54-35"><a href="#cb54-35" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.relu2 <span class="op">=</span>  nn.ReLU()</span>
+<span id="cb54-36"><a href="#cb54-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-37"><a href="#cb54-37" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Linear layer to transform the above 256 neurons outcome to two classes</span></span>
+<span id="cb54-38"><a href="#cb54-38" aria-hidden="true" tabindex="-1"></a>        <span class="co"># then the sigmoid activation function to convert the  values between 0 and 1 with threshold set to 0.5</span></span>
+<span id="cb54-39"><a href="#cb54-39" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.classifier <span class="op">=</span> nn.Linear(<span class="dv">256</span>, num_labels )</span>
+<span id="cb54-40"><a href="#cb54-40" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.sigmoid <span class="op">=</span> nn.Sigmoid()</span>
+<span id="cb54-41"><a href="#cb54-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-42"><a href="#cb54-42" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> forward(<span class="va">self</span>, input_ids <span class="op">=</span> <span class="va">None</span>, attention_mask<span class="op">=</span><span class="va">None</span>, labels <span class="op">=</span> <span class="va">None</span> ):</span>
+<span id="cb54-43"><a href="#cb54-43" aria-hidden="true" tabindex="-1"></a>        <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb54-44"><a href="#cb54-44" aria-hidden="true" tabindex="-1"></a><span class="co">        This function is to build the forward propogation of the data among the layers.</span></span>
+<span id="cb54-45"><a href="#cb54-45" aria-hidden="true" tabindex="-1"></a><span class="co">        The input data is the input ids and positional encodings based on the bert tokenizer, the data format is tensor</span></span>
+<span id="cb54-46"><a href="#cb54-46" aria-hidden="true" tabindex="-1"></a><span class="co">        The output is a tensorflow function to pass a tuple of loss values, logits, hidden state and positional attentions</span></span>
+<span id="cb54-47"><a href="#cb54-47" aria-hidden="true" tabindex="-1"></a><span class="co">        input_ids: the input ids genrated by the tokenizer</span></span>
+<span id="cb54-48"><a href="#cb54-48" aria-hidden="true" tabindex="-1"></a><span class="co">        attention_mask: the positional encodings or attention mask generated by the tokenizer</span></span>
+<span id="cb54-49"><a href="#cb54-49" aria-hidden="true" tabindex="-1"></a><span class="co">        labels: the label encoding to be 1 or 0 indicating positive</span></span>
+<span id="cb54-50"><a href="#cb54-50" aria-hidden="true" tabindex="-1"></a><span class="co">        &quot;&quot;&quot;</span></span>
+<span id="cb54-51"><a href="#cb54-51" aria-hidden="true" tabindex="-1"></a>        <span class="co"># running the base model with input ids and attention ask generated by bert base model</span></span>
+<span id="cb54-52"><a href="#cb54-52" aria-hidden="true" tabindex="-1"></a>        outputs <span class="op">=</span> <span class="va">self</span>.model(input_ids <span class="op">=</span> input_ids, attention_mask <span class="op">=</span> attention_mask)</span>
+<span id="cb54-53"><a href="#cb54-53" aria-hidden="true" tabindex="-1"></a>        <span class="co"># obtaining the features from the last layer of the model</span></span>
+<span id="cb54-54"><a href="#cb54-54" aria-hidden="true" tabindex="-1"></a>        last_hidden_state <span class="op">=</span> outputs[<span class="dv">0</span>]</span>
+<span id="cb54-55"><a href="#cb54-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-56"><a href="#cb54-56" aria-hidden="true" tabindex="-1"></a>        <span class="co"># New Layer -dense layer 1</span></span>
+<span id="cb54-57"><a href="#cb54-57" aria-hidden="true" tabindex="-1"></a>        <span class="co"># first fully connected layer with relu activation function</span></span>
+<span id="cb54-58"><a href="#cb54-58" aria-hidden="true" tabindex="-1"></a>        <span class="co"># passing the last layer features to the fully connected layers</span></span>
+<span id="cb54-59"><a href="#cb54-59" aria-hidden="true" tabindex="-1"></a>        <span class="co"># reducing the 768 features from the hidden state to 512 features</span></span>
+<span id="cb54-60"><a href="#cb54-60" aria-hidden="true" tabindex="-1"></a>        sequence_outputs1<span class="op">=</span> <span class="va">self</span>.fc1(last_hidden_state)</span>
+<span id="cb54-61"><a href="#cb54-61" aria-hidden="true" tabindex="-1"></a>        sequence_outputs1 <span class="op">=</span> <span class="va">self</span>.relu1(sequence_outputs1)</span>
+<span id="cb54-62"><a href="#cb54-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-63"><a href="#cb54-63" aria-hidden="true" tabindex="-1"></a>        <span class="co"># New Layer -dense layer 2</span></span>
+<span id="cb54-64"><a href="#cb54-64" aria-hidden="true" tabindex="-1"></a>        <span class="co"># second fully connected layer with relu activation function</span></span>
+<span id="cb54-65"><a href="#cb54-65" aria-hidden="true" tabindex="-1"></a>        <span class="co"># passing the first connected layer 512 features to the second fully connected layer</span></span>
+<span id="cb54-66"><a href="#cb54-66" aria-hidden="true" tabindex="-1"></a>        <span class="co"># and reducing the dimention to 256 features</span></span>
+<span id="cb54-67"><a href="#cb54-67" aria-hidden="true" tabindex="-1"></a>        sequence_outputs2<span class="op">=</span> <span class="va">self</span>.fc2(sequence_outputs1)</span>
+<span id="cb54-68"><a href="#cb54-68" aria-hidden="true" tabindex="-1"></a>        sequence_outputs2 <span class="op">=</span> <span class="va">self</span>.relu2(sequence_outputs2)</span>
+<span id="cb54-69"><a href="#cb54-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-70"><a href="#cb54-70" aria-hidden="true" tabindex="-1"></a>        <span class="co"># linear layer to transform the above 256 neurons outcome to two classes,</span></span>
+<span id="cb54-71"><a href="#cb54-71" aria-hidden="true" tabindex="-1"></a>        <span class="co"># this is because of the sentiment is 2 clases, positive and negative</span></span>
+<span id="cb54-72"><a href="#cb54-72" aria-hidden="true" tabindex="-1"></a>        <span class="co"># then the sigmoid activation function to convert the  values between 0 and 1 with threshold set to 0.5</span></span>
+<span id="cb54-73"><a href="#cb54-73" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> <span class="va">self</span>.classifier(sequence_outputs2[:, <span class="dv">0</span>, : ].view(<span class="op">-</span><span class="dv">1</span>, <span class="dv">256</span> ))</span>
+<span id="cb54-74"><a href="#cb54-74" aria-hidden="true" tabindex="-1"></a>        logits <span class="op">=</span> torch.sigmoid(x)</span>
+<span id="cb54-75"><a href="#cb54-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-76"><a href="#cb54-76" aria-hidden="true" tabindex="-1"></a>        <span class="co"># computing the loss value using Binary cross Entropy Loss function</span></span>
+<span id="cb54-77"><a href="#cb54-77" aria-hidden="true" tabindex="-1"></a>        <span class="co"># calculated between the logits computed from the sigmoid function data format is list of tensors([1,0])</span></span>
+<span id="cb54-78"><a href="#cb54-78" aria-hidden="true" tabindex="-1"></a>        <span class="co"># and the actual labels converted to  a list of tensors ([1,0]) using torch vstack</span></span>
+<span id="cb54-79"><a href="#cb54-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-80"><a href="#cb54-80" aria-hidden="true" tabindex="-1"></a>        loss <span class="op">=</span> <span class="va">None</span></span>
+<span id="cb54-81"><a href="#cb54-81" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> labels <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb54-82"><a href="#cb54-82" aria-hidden="true" tabindex="-1"></a>            loss_func <span class="op">=</span> nn.BCELoss()</span>
+<span id="cb54-83"><a href="#cb54-83" aria-hidden="true" tabindex="-1"></a>            loss <span class="op">=</span> loss_func(logits, torch.vstack(( <span class="dv">1</span> <span class="op">-</span> labels,labels)).T) <span class="co"># converting the label to 2 classes tensor</span></span>
+<span id="cb54-84"><a href="#cb54-84" aria-hidden="true" tabindex="-1"></a>        <span class="co"># returning the tuple using a tensorflow TokenClassifierOutput with tensors of loss, logits , hiffen state and attentions</span></span>
+<span id="cb54-85"><a href="#cb54-85" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> TokenClassifierOutput(loss<span class="op">=</span>loss, logits<span class="op">=</span>logits,hidden_states<span class="op">=</span>outputs.hidden_states, attentions<span class="op">=</span>outputs.attentions )</span></code></pre></div>
+</div>
+<div class="cell code" id="-cnm7LafJ-5T">
+<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co"># intitializing the model by training the last layer of the model</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>fineTune_layer1_model <span class="op">=</span> FineTuneLayer1Model(basemodel_name<span class="op">=</span><span class="st">&#39;bert-base-uncased&#39;</span>, num_labels<span class="op">=</span><span class="dv">2</span> ).to(device)</span></code></pre></div>
+</div>
+<div class="cell code" data-colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}" id="gJt4y3qgMBea" data-outputId="48c91d45-6237-4ed8-e184-947e03d2bd1f">
+<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co">#listing all the trainable parameters</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, param <span class="kw">in</span> fineTune_layer1_model.named_parameters():</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> param.requires_grad <span class="op">==</span> <span class="va">True</span>:</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>param<span class="sc">.</span>size()<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>model.encoder.layer.11.output.dense.weight: torch.Size([768, 3072])
+model.encoder.layer.11.output.dense.bias: torch.Size([768])
+model.encoder.layer.11.output.LayerNorm.weight: torch.Size([768])
+model.encoder.layer.11.output.LayerNorm.bias: torch.Size([768])
+fc1.weight: torch.Size([512, 768])
+fc1.bias: torch.Size([512])
+fc2.weight: torch.Size([256, 512])
+fc2.bias: torch.Size([256])
+classifier.weight: torch.Size([2, 256])
+classifier.bias: torch.Size([2])
+</code></pre>
+</div>
+</div>
+<div class="cell code" data-colab="{&quot;referenced_widgets&quot;:[&quot;1f035a2e172e4ce8a7fd08da487e10b2&quot;,&quot;ebf9172a7b4a4f8daae1f5cb44fa9389&quot;]}" id="9QpapD3rJ-5T" data-outputId="cbc122ab-7aff-410d-dd2b-ecef3782da03">
+<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="co"># running 6 epochs</span></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>num_epoch<span class="op">=</span><span class="dv">20</span></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>fineTune_layer1_model_train_losses, fineTune_layer1_model_val_losses,fineTune_layer1_model_train_metrics,fineTune_layer1_model_test_metrics  <span class="op">=</span> train_model(fineTune_layer1_model,  train_dataloader, val_dataloader,num_epochs<span class="op">=</span>num_epoch)</span></code></pre></div>
+<div class="output display_data">
+<div class="sourceCode" id="cb59"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;1f035a2e172e4ce8a7fd08da487e10b2&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output display_data">
+<div class="sourceCode" id="cb60"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span><span class="dt">&quot;model_id&quot;</span><span class="fu">:</span><span class="st">&quot;ebf9172a7b4a4f8daae1f5cb44fa9389&quot;</span><span class="fu">,</span><span class="dt">&quot;version_major&quot;</span><span class="fu">:</span><span class="dv">2</span><span class="fu">,</span><span class="dt">&quot;version_minor&quot;</span><span class="fu">:</span><span class="dv">0</span><span class="fu">}</span></span></code></pre></div>
+</div>
+<div class="output stream stdout">
+<pre><code>Epoch 1/20: Train Loss - 0.0212, Val Loss - 0.6508, Train Accuracy - 0.7109714150428772, Test Accuracy - 0.7443333268165588
+Epoch 2/20: Train Loss - 0.0176, Val Loss - 0.4481, Train Accuracy - 0.775600016117096, Test Accuracy - 0.8167333602905273
+Epoch 3/20: Train Loss - 0.0145, Val Loss - 0.4194, Train Accuracy - 0.8063714504241943, Test Accuracy - 0.8285999894142151
+Epoch 4/20: Train Loss - 0.0140, Val Loss - 0.4095, Train Accuracy - 0.8135714530944824, Test Accuracy - 0.8312666416168213
+Epoch 5/20: Train Loss - 0.0138, Val Loss - 0.4077, Train Accuracy - 0.8152857422828674, Test Accuracy - 0.8324000239372253
+Epoch 6/20: Train Loss - 0.0138, Val Loss - 0.4052, Train Accuracy - 0.8166000247001648, Test Accuracy - 0.8330666422843933
+Epoch 7/20: Train Loss - 0.0138, Val Loss - 0.4044, Train Accuracy - 0.8152285814285278, Test Accuracy - 0.8345333337783813
+Epoch 8/20: Train Loss - 0.0138, Val Loss - 0.4074, Train Accuracy - 0.8159714341163635, Test Accuracy - 0.8323333263397217
+Epoch 9/20: Train Loss - 0.0138, Val Loss - 0.4078, Train Accuracy - 0.8149714469909668, Test Accuracy - 0.833733320236206
+Epoch 10/20: Train Loss - 0.0139, Val Loss - 0.4095, Train Accuracy - 0.8141714334487915, Test Accuracy - 0.8338000178337097
+Epoch 11/20: Train Loss - 0.0139, Val Loss - 0.4139, Train Accuracy - 0.8137428760528564, Test Accuracy - 0.8274000287055969
+Epoch 12/20: Train Loss - 0.0139, Val Loss - 0.4141, Train Accuracy - 0.8166000247001648, Test Accuracy - 0.8306000232696533
+Epoch 13/20: Train Loss - 0.0140, Val Loss - 0.4191, Train Accuracy - 0.8134571313858032, Test Accuracy - 0.8287333250045776
+Epoch 14/20: Train Loss - 0.0141, Val Loss - 0.4194, Train Accuracy - 0.8149999976158142, Test Accuracy - 0.8307333588600159
+Epoch 15/20: Train Loss - 0.0142, Val Loss - 0.4239, Train Accuracy - 0.8123142719268799, Test Accuracy - 0.8320000171661377
+Epoch 16/20: Train Loss - 0.0143, Val Loss - 0.4252, Train Accuracy - 0.8123428821563721, Test Accuracy - 0.8297333121299744
+Epoch 17/20: Train Loss - 0.0144, Val Loss - 0.4316, Train Accuracy - 0.8134857416152954, Test Accuracy - 0.8251333236694336
+Epoch 18/20: Train Loss - 0.0145, Val Loss - 0.4345, Train Accuracy - 0.8112000226974487, Test Accuracy - 0.8289999961853027
+Epoch 19/20: Train Loss - 0.0147, Val Loss - 0.4415, Train Accuracy - 0.8112857341766357, Test Accuracy - 0.824400007724762
+Epoch 20/20: Train Loss - 0.0148, Val Loss - 0.4480, Train Accuracy - 0.8091999888420105, Test Accuracy - 0.8220000267028809
+CPU times: user 2h 53min 27s, sys: 8.6 s, total: 2h 53min 36s
+Wall time: 2h 53min 23s
+</code></pre>
+</div>
+</div>
+<div class="cell code" id="8c_TIJOWXvgq">
+<div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>torch.save(fineTune_layer1_model.state_dict(), <span class="st">&#39;fineTune_layer1_model&#39;</span><span class="op">+</span>add_name<span class="op">+</span><span class="st">&#39;.h5&#39;</span>)</span></code></pre></div>
+</div>
+<div class="cell code" id="UfJVREOaPlh_" data-outputId="59e847b4-75db-477d-92a0-a1612a695cef">
+<div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>plot_training_validation_acc(fineTune_layer1_model_train_losses, fineTune_layer1_model_val_losses,[item.item() <span class="cf">for</span> item <span class="kw">in</span> fineTune_layer1_model_train_metrics],[item.item() <span class="cf">for</span> item <span class="kw">in</span> fineTune_layer1_model_test_metrics])</span></code></pre></div>
+<div class="output display_data">
+<p><img src="2e312c0a1104880b8d63cd9a6ac4641c6f95274a.png" /></p>
+</div>
+<div class="output display_data">
+<p><img src="d12903d68c089fe72edb7a5513010ae4615f2dd3.png" /></p>
+</div>
+</div>
+<div class="cell code" id="TbuPcEN5J-5T">
+<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we can observe that model converges from the start, for 6 epochs it has been very stagnant.</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="co"># for both accuracy and validation loss</span></span></code></pre></div>
+</div>
+<div class="cell code" id="pdhcfMlXJ-5T">
+<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co"># import json</span></span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="co"># # Specify the path to your JSON file</span></span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="co"># json_file_path = &#39;FineTuneLayer1Model.txt&#39;</span></span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a><span class="co"># # Load JSON data from the file into a dictionary</span></span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a><span class="co"># with open(json_file_path, &#39;r&#39;) as file:</span></span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a><span class="co">#     FineTuneLayer1Model = json.load(file)</span></span>
+<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a><span class="co"># # Specify the path to your JSON file</span></span>
+<span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a><span class="co"># json_file_path = &#39;foundation_model_values.txt&#39;</span></span>
+<span id="cb65-12"><a href="#cb65-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-13"><a href="#cb65-13" aria-hidden="true" tabindex="-1"></a><span class="co"># # Load JSON data from the file into a dictionary</span></span>
+<span id="cb65-14"><a href="#cb65-14" aria-hidden="true" tabindex="-1"></a><span class="co"># with open(json_file_path, &#39;r&#39;) as file:</span></span>
+<span id="cb65-15"><a href="#cb65-15" aria-hidden="true" tabindex="-1"></a><span class="co">#     foundation_model_values = json.load(file)</span></span>
+<span id="cb65-16"><a href="#cb65-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-17"><a href="#cb65-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-18"><a href="#cb65-18" aria-hidden="true" tabindex="-1"></a><span class="co"># fineTune_layer1_model_train_losses=FineTuneLayer1Model[&#39;fineTune_layer1_model_train_losses&#39;]</span></span>
+<span id="cb65-19"><a href="#cb65-19" aria-hidden="true" tabindex="-1"></a><span class="co"># fineTune_layer1_model_val_losses=FineTuneLayer1Model[&#39;fineTune_layer1_model_val_losses&#39;]</span></span>
+<span id="cb65-20"><a href="#cb65-20" aria-hidden="true" tabindex="-1"></a><span class="co"># fineTune_layer1_model_train_metrics=FineTuneLayer1Model[&#39;fineTune_layer1_model_train_metrics&#39;]</span></span>
+<span id="cb65-21"><a href="#cb65-21" aria-hidden="true" tabindex="-1"></a><span class="co"># fineTune_layer1_model_test_metrics=FineTuneLayer1Model[&#39;fineTune_layer1_model_test_metrics&#39;]</span></span>
+<span id="cb65-22"><a href="#cb65-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-23"><a href="#cb65-23" aria-hidden="true" tabindex="-1"></a><span class="co"># foundation_model_train_losses=foundation_model_values[&#39;foundation_model_train_losses&#39;]</span></span>
+<span id="cb65-24"><a href="#cb65-24" aria-hidden="true" tabindex="-1"></a><span class="co"># foundation_model_val_losses=foundation_model_values[&#39;foundation_model_val_losses&#39;]</span></span>
+<span id="cb65-25"><a href="#cb65-25" aria-hidden="true" tabindex="-1"></a><span class="co"># foundation_model_train_metrics=foundation_model_values[&#39;foundation_model_train_metrics&#39;]</span></span>
+<span id="cb65-26"><a href="#cb65-26" aria-hidden="true" tabindex="-1"></a><span class="co"># foundation_model_test_metrics=foundation_model_values[&#39;foundation_model_test_metrics&#39;]</span></span>
+<span id="cb65-27"><a href="#cb65-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-28"><a href="#cb65-28" aria-hidden="true" tabindex="-1"></a><span class="co"># with open(&#39;my_dict.txt&#39;, &#39;r&#39;) as file:</span></span>
+<span id="cb65-29"><a href="#cb65-29" aria-hidden="true" tabindex="-1"></a><span class="co">#     history = json.load(file)</span></span>
+<span id="cb65-30"><a href="#cb65-30" aria-hidden="true" tabindex="-1"></a><span class="co"># man_model_training_loss = history[&#39;loss&#39;]</span></span>
+<span id="cb65-31"><a href="#cb65-31" aria-hidden="true" tabindex="-1"></a><span class="co"># man_model_validation_loss = history[&#39;val_loss&#39;]</span></span>
+<span id="cb65-32"><a href="#cb65-32" aria-hidden="true" tabindex="-1"></a><span class="co"># man_model_training_accuracy= history[&#39;accuracy&#39;]</span></span>
+<span id="cb65-33"><a href="#cb65-33" aria-hidden="true" tabindex="-1"></a><span class="co"># man_model_validation_accuracy = history[&#39;val_accuracy&#39;]</span></span>
+<span id="cb65-34"><a href="#cb65-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Save the dictionary to the text file</span></span>
+<span id="cb65-35"><a href="#cb65-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-36"><a href="#cb65-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-37"><a href="#cb65-37" aria-hidden="true" tabindex="-1"></a>FineTuneLayer1Model_values<span class="op">=</span>{</span>
+<span id="cb65-38"><a href="#cb65-38" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;fineTune_layer1_model_train_losses&quot;</span>:FineTuneLayer1Model[<span class="st">&#39;fineTune_layer1_model_train_losses&#39;</span>],</span>
+<span id="cb65-39"><a href="#cb65-39" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;fineTune_layer1_model_val_losses&quot;</span>:FineTuneLayer1Model[<span class="st">&#39;fineTune_layer1_model_val_losses&#39;</span>],</span>
+<span id="cb65-40"><a href="#cb65-40" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;fineTune_layer1_model_train_metrics&quot;</span>:FineTuneLayer1Model[<span class="st">&#39;fineTune_layer1_model_train_metrics&#39;</span>],</span>
+<span id="cb65-41"><a href="#cb65-41" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;fineTune_layer1_model_test_metrics&quot;</span>:FineTuneLayer1Model[<span class="st">&#39;fineTune_layer1_model_test_metrics&#39;</span>]}</span>
+<span id="cb65-42"><a href="#cb65-42" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;FineTuneLayer1Model_all.txt&#39;</span>, <span class="st">&#39;w&#39;</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb65-43"><a href="#cb65-43" aria-hidden="true" tabindex="-1"></a>    json.dump(FineTuneLayer1Model_values, <span class="bu">file</span>)</span></code></pre></div>
+</div>
+<section id="report" class="cell markdown" id="Q3Mgh1AVxv9A">
+<h1>Report</h1>
+</section>
+<div class="cell code" id="u9HHewFHdKeI" data-outputId="6b6d70e1-3036-4569-b604-6d569fba88af">
+<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>sns.lineplot( man_model_validation_accuracy, label<span class="op">=</span><span class="st">&#39;Model from Scratch&#39;</span>)</span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>sns.lineplot( foundation_model_test_metrics, label<span class="op">=</span><span class="st">&#39;Foundation Model&#39;</span>)</span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a>sns.lineplot([item.item() <span class="cf">for</span> item <span class="kw">in</span> fineTune_layer1_model_test_metrics], label<span class="op">=</span><span class="st">&#39;Fine Tuned Foundation Model&#39;</span>)</span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Accuracy Over Epochs&#39;</span>)</span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Epochs&#39;</span>)</span>
+<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Accuracy&#39;</span>)</span>
+<span id="cb66-9"><a href="#cb66-9" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb66-10"><a href="#cb66-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="output display_data">
+<p><img src="0089be46065b62214a0a1b71c92953d3f76b2e19.png" /></p>
+</div>
+</div>
+<div class="cell code" id="xe7A9yVeJ-5U">
+<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I have plotted the accuracy across the three models built we see that the model that was built from scratch,</span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a><span class="co">#that is 3 layers of dense layers with same number of neurons and learning rate as 0 validation accuracy over epochs.</span></span>
+<span id="cb67-3"><a href="#cb67-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The foundation model, bert with the top model, has reached 0.8 and has converged at 82% thoughout the epochs</span></span>
+<span id="cb67-4"><a href="#cb67-4" aria-hidden="true" tabindex="-1"></a><span class="co"># while the fine tuned foundation model has performed better 83% accuracy from the start</span></span>
+<span id="cb67-5"><a href="#cb67-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb67-6"><a href="#cb67-6" aria-hidden="true" tabindex="-1"></a><span class="co"># The fine tuned seems to have slightly better accuracy, however, we could do better here</span></span></code></pre></div>
+</div>
+<div class="cell code" id="imYJGXyYMBYI" data-outputId="186b01b4-0c34-45c6-cc8f-a710f8e0741d">
+<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>sns.lineplot( man_model_validation_loss, label<span class="op">=</span><span class="st">&#39;Model from Scratch&#39;</span>)</span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>sns.lineplot(foundation_model_val_losses, label<span class="op">=</span><span class="st">&#39;Foundation Model&#39;</span>)</span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>sns.lineplot(fineTune_layer1_model_val_losses, label<span class="op">=</span><span class="st">&#39;Fine Tuned Foundation Model&#39;</span>)</span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Validation Loss Over Epochs&#39;</span>)</span>
+<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;Epochs&#39;</span>)</span>
+<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Loss&#39;</span>)</span>
+<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb68-10"><a href="#cb68-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="output display_data">
+<p><img src="e7f4a14e60dc7440932d98518b9853c8db1adc57.png" /></p>
+</div>
+</div>
+<div class="cell code" id="3CAEo4q0J-5U">
+<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># When we look at the validation loss, we notice that the top model/ model from scratch has negative loss values but noting is converging</span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="co"># While the foundation model is converging at 40% while the fine tuned one is slightly better and the value is less than 40%</span></span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a><span class="co"># from both the above graphs, if we consider the first 6 epochs we can notice that the fine tuned model converges faster than the others</span></span></code></pre></div>
+</div>
+<div class="cell code" id="q-A36ecKJ-5U">
+<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Time taken by the models</span></span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>Model Name          <span class="op">|</span>Time <span class="op">-</span><span class="dv">20</span> epochs</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>Model <span class="im">from</span> Scratch  <span class="op">|</span><span class="dv">7</span><span class="er">min</span> <span class="dv">35</span><span class="er">s</span></span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>Foundation Model    <span class="op">|</span><span class="dv">2</span><span class="er">h</span> <span class="dv">54</span><span class="er">min</span> <span class="dv">33</span><span class="er">s</span></span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>Fine Tuned Model    <span class="op">|</span><span class="dv">2</span><span class="er">h</span> <span class="dv">53</span><span class="er">min</span> <span class="dv">23</span><span class="er">s</span></span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a>Due to time constrains I have chosen <span class="cf">for</span> only <span class="dv">6</span> epochs (will <span class="cf">try</span> my best to update)</span>
+<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a>Although the model <span class="im">from</span> Scratch has performed within <span class="dv">8</span> mins, the performance <span class="kw">is</span> very poor, hence we will disregard it</span>
+<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a>Based on the time taken <span class="cf">for</span> both Foundation model <span class="kw">and</span> Fine tuned model they are sharing same amount of time to run <span class="dv">6</span> epochs</span>
+<span id="cb70-10"><a href="#cb70-10" aria-hidden="true" tabindex="-1"></a>So I cannot make an inference based on time <span class="cf">for</span> these models</span></code></pre></div>
+</div>
+<div class="cell code" id="uVjklO97MBUz" data-outputId="fe6af341-5569-49c5-fb79-a87ba33d1210">
+<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>_, p_value_accuracy <span class="op">=</span> ttest_rel( man_model_validation_accuracy, [item.item() <span class="cf">for</span> item <span class="kw">in</span> foundation_model_test_metrics])</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;p_value_accuracy&quot;</span>,p_value_accuracy)</span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> p_value_accuracy <span class="op">&lt;</span> <span class="fl">0.05</span>:</span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;The difference in accuracy is statistically significant.&quot;</span>)</span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;There is no statistically significant difference in accuracy.&quot;</span>)</span>
+<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-9"><a href="#cb71-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-10"><a href="#cb71-10" aria-hidden="true" tabindex="-1"></a>_, p_value_accuracy <span class="op">=</span> mannwhitneyu(man_model_validation_accuracy, [item.item() <span class="cf">for</span> item <span class="kw">in</span> foundation_model_test_metrics], alternative<span class="op">=</span><span class="st">&#39;two-sided&#39;</span>)</span>
+<span id="cb71-11"><a href="#cb71-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;p_value_accuracy&quot;</span>, p_value_accuracy)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>p_value_accuracy 2.738095144000016e-30
+The difference in accuracy is statistically significant.
+p_value_accuracy 8.006545033944715e-09
+</code></pre>
+</div>
+</div>
+<div class="cell code" id="cYkxZYVoJ-5U">
+<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model from  model from scratch vs the Foundation Model</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="co"># In the above code we have computed the Paired t-test, i.e.,</span></span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="co">#to prove the null hypothesis that is no signifcant differences between the model from scracth and the foundation model</span></span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a><span class="co"># The p value obtained is less than 0.05,hence we reject the null hypothesis and prove that these two models are statistically different</span></span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Ofcourse</span></span>
+<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Mann-Whitney U test:</span></span>
+<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a><span class="co">#This is another test to check if the two groups are statictally different, having the same null hypothesis</span></span>
+<span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Again the p-value is less than 0.05 threshold hence, we reject the hypothesis</span></span></code></pre></div>
+</div>
+<div class="cell code" id="JESnEkUGMBR4" data-outputId="02f95ce9-ac4e-41b3-c993-2af60f61cdfd">
+<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>_, p_value_accuracy <span class="op">=</span> ttest_rel( man_model_validation_accuracy, [item.item() <span class="cf">for</span> item <span class="kw">in</span> fineTune_layer1_model_test_metrics])</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;p_value_accuracy&quot;</span>,p_value_accuracy)</span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> p_value_accuracy <span class="op">&lt;</span> <span class="fl">0.05</span>:</span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;The difference in accuracy is statistically significant.&quot;</span>)</span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;There is no statistically significant difference in accuracy.&quot;</span>)</span>
+<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a>_, p_value_accuracy <span class="op">=</span> mannwhitneyu(man_model_validation_accuracy, foundation_model_test_metrics, alternative<span class="op">=</span><span class="st">&#39;two-sided&#39;</span>)</span>
+<span id="cb74-9"><a href="#cb74-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;p_value_accuracy&quot;</span>, p_value_accuracy)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>p_value_accuracy 1.386603558149202e-32
+The difference in accuracy is statistically significant.
+p_value_accuracy 8.006545033944715e-09
+</code></pre>
+</div>
+</div>
+<div class="cell code" id="ZklVbZvVJ-5U">
+<div class="sourceCode" id="cb76"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model from  model from scratch  vs FineTune Model</span></span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="co"># In the above code we have computed the Paired t-test, i.e.,</span></span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="co">#to prove the null hypothesis that is no signifcant differences between the model from scracth and the FineTune Model</span></span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a><span class="co"># The p value obtained is less than 0.05,hence we reject the null hypothesis and prove that these two models are statistically different</span></span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Mann-Whitney U test:</span></span>
+<span id="cb76-7"><a href="#cb76-7" aria-hidden="true" tabindex="-1"></a><span class="co">#This is another test to check if the two groups are statictally different, having the same null hypothesis</span></span>
+<span id="cb76-8"><a href="#cb76-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Again the p-value is less than 0.05 threshold hence, we reject the hypothesis</span></span></code></pre></div>
+</div>
+<div class="cell code" id="tuE8vOHUMBOX" data-outputId="7d1994a1-dc03-48b6-89b9-063ac0a86d53">
+<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>_, p_value_accuracy <span class="op">=</span> ttest_rel( [item.item() <span class="cf">for</span> item <span class="kw">in</span> foundation_model_test_metrics], [item.item() <span class="cf">for</span> item <span class="kw">in</span> fineTune_layer1_model_test_metrics])</span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;p_value_accuracy&quot;</span>,p_value_accuracy)</span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> p_value_accuracy <span class="op">&lt;</span> <span class="fl">0.05</span>:</span>
+<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;The difference in accuracy is statistically significant.&quot;</span>)</span>
+<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;There is no statistically significant difference in accuracy.&quot;</span>)</span>
+<span id="cb77-7"><a href="#cb77-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-8"><a href="#cb77-8" aria-hidden="true" tabindex="-1"></a>_, p_value_accuracy <span class="op">=</span> mannwhitneyu([item.item() <span class="cf">for</span> item <span class="kw">in</span> foundation_model_test_metrics], [item.item() <span class="cf">for</span> item <span class="kw">in</span> fineTune_layer1_model_test_metrics], alternative<span class="op">=</span><span class="st">&#39;two-sided&#39;</span>)</span>
+<span id="cb77-9"><a href="#cb77-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;p_value_accuracy&quot;</span>, p_value_accuracy)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>p_value_accuracy 0.0595452341685371
+There is no statistically significant difference in accuracy.
+p_value_accuracy 0.0021645021645021645
+</code></pre>
+</div>
+</div>
+<div class="cell code" id="KFQvx5F-J-5U">
+<div class="sourceCode" id="cb79"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Model from Foundation vs FineTune Model</span></span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a><span class="co"># In the above code we have computed the Paired t-test, i.e.,</span></span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a><span class="co">#to prove the null hypothesis that is no signifcant differences between the model from scracth and the FineTune Model</span></span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a><span class="co"># The p value obtained is 0.59 which is very slightly higher than 0.05,hence we accept the null hypothesis</span></span>
+<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a><span class="co"># and prove that these two models are not statistically different</span></span>
+<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Mann-Whitney U test:</span></span>
+<span id="cb79-8"><a href="#cb79-8" aria-hidden="true" tabindex="-1"></a><span class="co">#This is another test to check if the two groups are statictally different, having the same null hypothesis</span></span>
+<span id="cb79-9"><a href="#cb79-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Again the p-value is less than 0.05 threshold hence, we reject the hypothesis</span></span>
+<span id="cb79-10"><a href="#cb79-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-11"><a href="#cb79-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb79-12"><a href="#cb79-12" aria-hidden="true" tabindex="-1"></a><span class="co"># So for these two model it is inconclusive, we may have to try more epochs, and see if that chnages the FIneTune model, or try different model,</span></span>
+<span id="cb79-13"><a href="#cb79-13" aria-hidden="true" tabindex="-1"></a><span class="co"># As we also see there is hardly any difference in the performance metric as well</span></span>
+<span id="cb79-14"><a href="#cb79-14" aria-hidden="true" tabindex="-1"></a><span class="co"># The accuracy of the model is as just 1% off</span></span>
+<span id="cb79-15"><a href="#cb79-15" aria-hidden="true" tabindex="-1"></a><span class="co"># For further analysis, I can chnage more layers and see and  try different hyper parameters and different base model</span></span></code></pre></div>
+</div>
+</body>
+</html>
